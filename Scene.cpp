@@ -5,11 +5,13 @@
 Scene::Scene():
     mState(UNDEFINED)
 {
+    printf("scene\n");
     mSsm = new SpeedSectionManager();
 }
 
 bool Scene::run()
 {
+    
     switch(mState) {
         case UNDEFINED:
             execUndefined();
@@ -34,13 +36,14 @@ bool Scene::run()
 
 void Scene::execUndefined()
 {
+    printf("start\n");
     mState=START;
 }
 void Scene::execStart()
 {
 
     // とりあえず動かすだけなので、設計に基づいて書き直そう
-    msg_log("Press Touch Button to start.");
+    printf("Press Touch Button to start.\n");
     ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {

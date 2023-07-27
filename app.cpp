@@ -49,25 +49,25 @@ Scene *gScene;
 
 
 static void user_system_create() {
-
+  printf("0\n");
   gBrightness = new Brightness();
   gHue = new HsvHue();
   gSatu = new HsvSatu();
-
+  printf("1\n");
   gColor = new MyColorSensor(PORT_2,gBrightness,gHue,gSatu);
   gLength = new Length();
   gTurnAngle = new TurnAngle();
   gVelocity = new Velocity();
-
+  printf("2\n");
   gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity);
   gSpeed = new SpeedControl(gOdo,gVelocity);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
   gTracer = new LineTracer(gOdo,gSpeed);
-
+  printf("3\n");
   gPolling = new Polling(gColor,gOdo);
-
+  printf("4\n");
   gScene = new Scene();
-
+  printf("5\n");
 }
 static void user_system_destroy() {
 
@@ -82,7 +82,7 @@ void main_task(intptr_t unused) {
 
   sta_cyc(POLLING_CYC);
   sta_cyc(TRACER_CYC);
-
+  printf("66\n");
   slp_tsk();
 
   stp_cyc(POLLING_CYC);
@@ -98,41 +98,42 @@ void main_task(intptr_t unused) {
 // end::main_task[]
 
 void polling_task(intptr_t unused) {
+  printf("6\n");
+  // gPolling->run();
 
-  gPolling->run();
+  //   Measure *m = gBrightness;
+  //   float br = m->getValue(); 
+  //   float len = gLength->getValue();
+  //   float turn = gTurnAngle->getValue();
+  //   float v = gVelocity->getValue();
+  //   float h = gHue->getValue();
+  //   float s = gSatu->getValue();
 
-    Measure *m = gBrightness;
-    float br = m->getValue(); 
-    float len = gLength->getValue();
-    float turn = gTurnAngle->getValue();
-    float v = gVelocity->getValue();
-    float h = gHue->getValue();
-    float s = gSatu->getValue();
-
-    rgb_raw_t rgb = gColor->getRgb();
-    static char buf[100];
-    sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
-    msg_log(buf);
+  //   rgb_raw_t rgb = gColor->getRgb();
+  //   static char buf[100];
+  //   sprintf(buf,"len , bri,H,S r,g,b, turn, v : %3.3f,  %7.4f,  %5.1f, %3.2f, %d,%d,%d  , %4.2f, %4.2f \n",len,br,h,s,  rgb.r, rgb.g,rgb.b ,turn,v);
+  //   msg_log(buf);
 
   ext_tsk();
 }
 
 void tracer_task(intptr_t unused) {
 
-  if (ev3_button_is_pressed(BACK_BUTTON)) {
-    wup_tsk(MAIN_TASK);  // 左ボタン押下でメインを起こす
-  } else {
+  printf("tracer\n");
+//   if (ev3_button_is_pressed(BACK_BUTTON)) {
+//     wup_tsk(MAIN_TASK);  // 左ボタン押下でメインを起こす
+//   } else {
 
-    // とりあえずここで、アームの固定。設計に基づいて変えるべし
-    int arm_cnt = gArm->getCount();
-   // syslog(LOG_NOTICE,"%d",arm_cnt);
-    int diff = -50 - arm_cnt;
-#if defined(MAKE_SIM)
-    gArm->setPWM(diff*4.0);
-#endif
+//     // とりあえずここで、アームの固定。設計に基づいて変えるべし
+//     int arm_cnt = gArm->getCount();
+//    // syslog(LOG_NOTICE,"%d",arm_cnt);
+//     int diff = -50 - arm_cnt;
+// #if defined(MAKE_SIM)
+//     gArm->setPWM(diff*4.0);
+// #endif
 
-    gScene->run();
-  }
+//     gScene->run();
+//  }
 
   ext_tsk();
 }

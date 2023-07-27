@@ -14,4 +14,3 @@ class HsvHue : public Measure
 };
 
 #endif
-
