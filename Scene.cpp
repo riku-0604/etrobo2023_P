@@ -41,14 +41,9 @@ void Scene::execUndefined()
 void Scene::execStart()
 {
 
-    // とりあえず動かすだけなので、設計に基づいて書き直そう
-<<<<<<< Updated upstream
+    // とりあえず動かすだけなので、設計に基づ�?て書き直そう
     printf("Press Touch Button to start!!\n");
     
-=======
-    printf("Press Touch Button to start.\n");
-    ev3_sensor_config(EV3_PORT_1, TOUCH_SENSOR);
->>>>>>> Stashed changes
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {
             mState=SPEED;
