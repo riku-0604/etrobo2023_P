@@ -26,6 +26,14 @@ void SectionManager::addSection(Section *sec)
     mSection[mLastIdx++]=sec;
 }
 
+/*bool SpeedSectionManager::run()//–½—ß‚ğ‚Ğ‚Á‚Ï‚Á‚Ä‚­‚é–½—ß‚ğ”\ŒÂì‚é(‚±‚ê‚Í‚Ü‚¾ˆêŒÂ‚¾‚¯‚Ğ‚Á‚Ï‚Á‚Ä‚­‚é‚à‚Ì)
+{
+    if(mSection[mSectionIdx]->run())
+        return true;
+
+    return false;
+}*/
+
 void SectionManager::reset()
 {
     for(int i=0;i<mLastIdx;i++) {
