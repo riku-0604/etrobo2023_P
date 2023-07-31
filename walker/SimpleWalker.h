@@ -24,12 +24,12 @@ public:
 
     virtual void run();
     void setCommand(int forward, int turn);
-    void setCommandV(float forward, int turn);
+    void setCommandV(double forward, int turn);
     void resetParam();
 
 protected:
 
-    float mForward;
+    double mForward;
     int mTurn;
 
     bool mBreake_flag;
