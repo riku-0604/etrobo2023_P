@@ -23,7 +23,10 @@ APPL_CXXOBJS += \
 	Scene.o \
 	Section.o \
 	SectionManager.o \
-	SpeedSectionManager.o
+	SpeedSectionManager.o \
+	x.o \
+	y.o \
+	MotorManager.o  
 
 SRCLANG := c++
 
@@ -34,14 +37,15 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit  $(mkfile_path)device $(mkfile_path)walker $(mkfile_path)section $(mkfile_path)judge
+APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit  $(mkfile_path)device $(mkfile_path)walker $(mkfile_path)section $(mkfile_path)judge $(mkfile_path)Measure
 
 INCLUDES += \
 	-I$(mkfile_path)app \
 	-I$(mkfile_path)device \
 	-I$(mkfile_path)walker \
 	-I$(mkfile_path)section \
-	-I$(mkfile_path)judge 
+	-I$(mkfile_path)judge \
+	-I$(mkfile_path)Measure
 
 # COPTS += -fno-use-cxa-atexit
 COPTS += -std=c++11

@@ -1,4 +1,4 @@
-#ifdef MOTORMANAGER_
+#ifndef MOTORMANAGER_
 #define MOTORMANAGER_
 
 #include <math.h>
@@ -7,13 +7,11 @@
 #include "Motor.h"
 #include "Odometry.h"
 
-
-
-class  Motermanagement
+class MotorManager
 {
     public:
         MotorManager(Motor *left,
-            Motor "right");
+            Motor *right);
 
     void setPwm(int left,int right);
 
