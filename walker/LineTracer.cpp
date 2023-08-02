@@ -47,7 +47,11 @@ void LineTracer::run()
 
 }
 
-
+void LineTracer::init()
+{
+    printf("LineTracer  mForward%f\n",mForward);
+    
+}
    
 double LineTracer::calcTurn(double val1) {
 
@@ -64,7 +68,8 @@ double LineTracer::calcTurn(double val1) {
   //  mPid->debug=true;
 
     if(mLeftEdge) val1_turn = -val1_turn;
-    setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
+    //setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
+    setBias(mCurve);
     double turn =  val1_turn+mBias;
    
     return turn;
@@ -102,6 +107,11 @@ void LineTracer::setParam(double speed,double target,double kp, double ki, doubl
 
 }
 
+void LineTracer::setpara(double para[])
+{
+    setParam(para[0],para[1],para[2],para[3],para[4],para[5],para[6]);
+    setEdgeMode(para[7]);
+}
 
 void LineTracer::setEdgeMode(bool isLeftEdge)
 {

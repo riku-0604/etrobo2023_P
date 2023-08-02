@@ -26,6 +26,8 @@ APPL_CXXOBJS += \
 	SpeedSectionManager.o \
 	x.o \
 	y.o \
+	judge.o\
+	judgeLength.o\
 	MotorManager.o  
 
 SRCLANG := c++

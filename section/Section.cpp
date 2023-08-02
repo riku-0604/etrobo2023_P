@@ -1,10 +1,14 @@
 #include "Section.h"
- 
+#include "judgeLength.h"
+
+#include "ev3api.h"
+
+
 extern SimpleWalker *gWalker;
 extern LineTracer *gTracer;
 extern Odometry *gOdo;
 extern SpeedControl *gSpeed;
-//xtern judge *mjudge;
+//extern judge *mjudge;
 
 Section::Section()
 {
@@ -19,14 +23,15 @@ Section::~Section()
 
 bool Section::run()
 {
-    //判定
-    /*if(mjudge->run())
+
+   //判定
+    if(mJudge->judgement())
     {
         return true;
-    }*/
+    }
 
     //走法
-    mWalker->run();
+    mWalker->move();
     
     return false;
 }
@@ -36,6 +41,7 @@ Walker *Section::selectWalker(int no)
     switch(no) {
         case WALKER:
             mWalker = (Walker*)(new SimpleWalker(gOdo,gSpeed));
+            printf("WALKER OK");
             break;
         case TRACER:
             mWalker = (Walker*)(new LineTracer(gOdo,gSpeed));
@@ -50,18 +56,20 @@ Walker *Section::selectWalker(int no)
 }
 
 
-/*Judge *Section::selectJudge(int no)
+Judge *Section::selectJudge(int no)
 {
     switch(no) {
         case LENGTH:
-            mjudge = (judge*)(new judgeLength());
+            mJudge = (new JudgeLength());
             break;
-        case COLOR:
+        /*case COLOR:
             mjudge = (judge*)(new judgeColor());
             printf("mjudge%d",mjudge);
             break;
-        case 
+        case */
     }
-}*/
+
+    return mJudge;
+}
 
 

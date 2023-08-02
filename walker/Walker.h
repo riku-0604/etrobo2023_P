@@ -14,12 +14,20 @@ class Walker
 
         virtual void run();
         virtual void printInfo();
-
+        virtual void setpara(double para[])=0;
+        virtual void init()=0;
+        void move();
+        enum State {
+            INIT,
+            RUN
+        };
     protected:
         Odometry *mOdo;
         PID *mPid;
 
         Brightness *mBright;
+
+        State mState;
 
     private:
 

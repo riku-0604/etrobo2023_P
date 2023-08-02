@@ -22,6 +22,7 @@ public:
 
     void setParam(double speed,double target,double kp, double ki, double kd);
     void setParam(double speed,double target,double kp, double ki, double kd,double angleTarget,double angleKp);
+    void setpara(double para[]);
                        
     void setEdgeMode(bool isLeftEdge);
     bool getEdgeMode();
@@ -38,6 +39,7 @@ public:
     static const int LEFTEDGE;
     static const int RIGHTEDGE;
 
+    void init();
 
 private:
     double calcTurn(double val1);
@@ -58,6 +60,8 @@ private:
     double mBias;
 
     int mLimit;  
+
+    double mTracerkids;
 };
 
 #endif  // EV3_APP_LINETRACER_H_

@@ -42,7 +42,7 @@ void Scene::execStart()
 {
 
     // とりあえず動かすだけなので、設計に基づ�?て書き直そう
-    printf("Press Touch Button to start!!\n");
+    //printf("Press Touch Button to start!!\n");
     
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
     {

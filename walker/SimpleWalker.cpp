@@ -30,6 +30,15 @@ SimpleWalker::SimpleWalker(
 {
 }
 
+void SimpleWalker::init()
+{
+    printf("mForward%f\n",mForward);
+    setCommand(minitForward,minitTurn);
+    printf("minitForward%f\n",minitForward);
+    printf("minitTurn%f\n",minitTurn);
+
+}
+
 
 void SimpleWalker::run() {
     static double speed=0;
@@ -38,6 +47,9 @@ void SimpleWalker::run() {
 
     double pwm_l = mForward + mTurn;      // <2>
     double pwm_r = mForward - mTurn;      // <2>
+    printf("%f\n",pwm_l);
+    printf("%f\n",pwm_r);
+
     static const int MAXPWM=85;
     int diff = 0;
     if(pwm_l>MAXPWM) {
@@ -67,7 +79,7 @@ void SimpleWalker::run() {
 }
 
 /**
- * PWM値を設定する
+ * PWM値を設定す�?
  * @param forward 前進値
  * @param turn    旋回値
  */
@@ -78,6 +90,21 @@ void SimpleWalker::setCommand(int forward, int turn) {
     mTurn    = turn;
     //mMode_flag = false;
     mSpeedControl->setMode(false);
+
+    printf("mForward%f\n",mForward);
+    printf("mTurn%f\n",mTurn);
+
+}
+
+void SimpleWalker::setpara(double para3[])
+{
+    //setCommand(para3[0],para3[1]);
+
+    minitForward = para3[0];
+    minitTurn = para3[1];
+
+    printf("parameter%f\n",para3[0]);
+    printf("parameter%f\n",para3[1]);
 
 }
 

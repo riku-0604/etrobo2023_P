@@ -26,6 +26,9 @@ public:
     void setCommand(int forward, int turn);
     void setCommandV(double forward, int turn);
     void resetParam();
+    void setpara(double para3[]);
+
+    virtual void init();
 
 protected:
 
@@ -33,11 +36,13 @@ protected:
     int mTurn;
 
     bool mBreake_flag;
-    bool mMode_flag;//setComandVだとtrue、setComandだとfalse
+    bool mMode_flag;//setComandV�?とtrue、setComand�?とfalse
 
     SpeedControl *mSpeedControl;
 
 private:
+    double minitForward;
+    double minitTurn;
 
 };
 
