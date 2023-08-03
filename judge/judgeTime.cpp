@@ -6,7 +6,7 @@
 
 JudgeTime::JudgeTime()
 {
-    countTime = 0;
+    countTime = 0;//ŠÔƒJƒEƒ“ƒg‰Šú‰»
 }
 
 void JudgeTime::setpara(double para[])
