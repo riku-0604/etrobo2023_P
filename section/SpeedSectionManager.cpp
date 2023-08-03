@@ -38,14 +38,14 @@ SpeedSectionManager::SpeedSectionManager()
 
     
     addSection(sc1);*/
-    printf("roopOK");
+   // printf("roopOK");
 
 
     for(int i=0;;i++)
     {
         if(spara[i].walker_no == Section::END)
         {
-            printf("endOK");
+            //printf("endOK");
             break;
         }
 
@@ -66,14 +66,14 @@ SpeedSectionManager::SpeedSectionManager()
 
 bool SpeedSectionManager::run()
 {
-    printf("mSectionIdx%d\n",mSectionIdx);
+    //printf("mSectionIdx%d\n",mSectionIdx);
 
     if(mSection[mSectionIdx]->run())
     {
         mSectionIdx++;
 
-        printf("mLastIdx%d\n",mLastIdx);
-        printf("mSectionIdx%d\n",mSectionIdx);
+        //printf("mLastIdx%d\n",mLastIdx);
+        //printf("mSectionIdx%d\n",mSectionIdx);
 
         if(mLastIdx <= mSectionIdx)
         {

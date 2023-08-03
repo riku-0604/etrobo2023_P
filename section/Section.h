@@ -25,6 +25,7 @@ class Section {
         enum JUDGE_NO{
             LENGTH,
             TIME,
+            COLOR,
             ENDJ,
             NONE
         };

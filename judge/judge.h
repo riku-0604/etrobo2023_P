@@ -2,7 +2,8 @@
 #define JUDGE_H
 
 #include "Length.h"
-
+#include "HsvHue.h"
+#include "HsvSatu.h"
 
 class Judge
 {
@@ -15,9 +16,13 @@ class Judge
     protected:
         virtual bool calcjudge()=0;
         Length *mLength;
+        HsvHue *mHue;     //Color
+        HsvSatu *mSatu;  //Color
     enum State {
         INIT,
         JUDGEMENT,
+        COLOR,
+        TIME,
         END
     };
 

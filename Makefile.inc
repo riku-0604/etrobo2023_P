@@ -28,6 +28,8 @@ APPL_CXXOBJS += \
 	y.o \
 	judge.o\
 	judgeLength.o\
+	judgeColor.o\
+	judgeTime.o\
 	MotorManager.o  
 
 SRCLANG := c++

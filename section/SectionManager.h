@@ -31,10 +31,11 @@ class SectionManager {
         int mLastIdx;
 
         SecParam spara [10] = {
-            {Section::TRACER,{28, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{50},Section::NONE,{}},
-            {Section::WALKER,{5, 0},Section::LENGTH,{55},Section::NONE,{}},
-            {Section::TRACER,{50, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{70},Section::NONE,{}},
-            {Section::WALKER,{10, -10},Section::LENGTH,{90},Section::NONE,{}},
+            {Section::TRACER,{28, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
+            {Section::TRACER,{28, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::COLOR,{29},Section::NONE,{}},
+            
+            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//Ž~‚Ü‚é
+
             {Section::END,{},Section::ENDJ,{}},
         };
         /*{

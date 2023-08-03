@@ -29,7 +29,7 @@ void Walker::run()
 
 void Walker::init()
 {
-    printf("initOK");
+    //printf("initOK");
 }
 
 

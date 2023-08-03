@@ -1,5 +1,7 @@
 #include "Section.h"
 #include "judgeLength.h"
+#include "judgeColor.h"
+#include "judgeTime.h"
 
 #include "ev3api.h"
 
@@ -62,11 +64,13 @@ Judge *Section::selectJudge(int no)
         case LENGTH:
             mJudge = (new JudgeLength());
             break;
-        /*case COLOR:
-            mjudge = (judge*)(new judgeColor());
-            printf("mjudge%d",mjudge);
+        case COLOR:
+            mJudge = (new JudgeColor());
+            //printf("mjudge%d",mjudge);
             break;
-        case */
+        case TIME:
+            mJudge = (new JudgeTime());
+        /*case */
     }
 
     return mJudge;

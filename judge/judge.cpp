@@ -1,10 +1,15 @@
 #include "judge.h"
 
 #include "ev3api.h"
+
 extern Length *gLength;
+extern HsvHue *gHue;
+extern HsvSatu *gSatu;
 
 Judge::Judge():
-    mLength(gLength)
+    mLength(gLength),
+    mHue(gHue),
+    mSatu(gSatu)
 {
     
 }

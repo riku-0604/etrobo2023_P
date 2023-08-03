@@ -32,10 +32,10 @@ SimpleWalker::SimpleWalker(
 
 void SimpleWalker::init()
 {
-    printf("mForward%f\n",mForward);
+    //printf("mForward%f\n",mForward);
     setCommand(minitForward,minitTurn);
-    printf("minitForward%f\n",minitForward);
-    printf("minitTurn%f\n",minitTurn);
+    // printf("minitForward%f\n",minitForward);
+    // printf("minitTurn%f\n",minitTurn);
 
 }
 
@@ -47,8 +47,8 @@ void SimpleWalker::run() {
 
     double pwm_l = mForward + mTurn;      // <2>
     double pwm_r = mForward - mTurn;      // <2>
-    printf("%f\n",pwm_l);
-    printf("%f\n",pwm_r);
+    //printf("%f\n",pwm_l);
+    //printf("%f\n",pwm_r);
 
     static const int MAXPWM=85;
     int diff = 0;
@@ -91,8 +91,8 @@ void SimpleWalker::setCommand(int forward, int turn) {
     //mMode_flag = false;
     mSpeedControl->setMode(false);
 
-    printf("mForward%f\n",mForward);
-    printf("mTurn%f\n",mTurn);
+   // printf("mForward%f\n",mForward);
+   // printf("mTurn%f\n",mTurn);
 
 }
 
@@ -103,8 +103,8 @@ void SimpleWalker::setpara(double para3[])
     minitForward = para3[0];
     minitTurn = para3[1];
 
-    printf("parameter%f\n",para3[0]);
-    printf("parameter%f\n",para3[1]);
+    //printf("parameter%f\n",para3[0]);
+    //printf("parameter%f\n",para3[1]);
 
 }
 
