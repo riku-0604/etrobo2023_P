@@ -58,6 +58,7 @@ bool BlockDeTreasure::runBlock()
         {
             WinnerColor = mSection[mSectionIdx]->returnValue();
             printf("WinnerColor%d\n",WinnerColor);
+            BlockCount++;
         }
         mSectionIdx++;
 
@@ -93,6 +94,25 @@ bool BlockDeTreasure::run()
         case MOVE_TO_BLOCK:
             MoveToBlock();
             break;
+
+        case INIT_MOVE_TO_BLOCK_2:
+            init(MoveToBlockpara2);
+            mState = MOVE_TO_BLOCK_2;
+            break;
+
+        case MOVE_TO_BLOCK_2:
+            MoveToBlock2();
+            break;
+
+        case INIT_MOVE_TO_BLOCK_3:
+            init(MoveToBlockpara3);
+            mState = MOVE_TO_BLOCK_3;
+            break;
+
+        case MOVE_TO_BLOCK_3:
+            //printf("MOVE_TO_BLOCK_3");
+            MoveToBlock3();
+            break;
         
         case INIT_JUDGEING_COLOR:
             init(JudgeingColorpara);
@@ -123,6 +143,7 @@ bool BlockDeTreasure::run()
             mState = MOVE_TO_GOAL;
             break;
         case MOVE_TO_GOAL:
+            printf("MOVE_TO_GOAL OK");
             MoveToGoal();
             break;
         case END:
@@ -152,6 +173,20 @@ bool BlockDeTreasure::MoveToBlock()
     }
 }
 
+bool BlockDeTreasure::MoveToBlock2()
+{
+    if(SectionManager::run()){
+        mState = INIT_JUDGEING_COLOR;
+    }
+}
+
+bool BlockDeTreasure::MoveToBlock3()
+{
+    if(SectionManager::run()){
+        mState = INIT_JUDGEING_COLOR;
+    }
+}
+
 bool BlockDeTreasure::JudgeingColor()
 {
     
@@ -170,16 +205,50 @@ bool BlockDeTreasure::JudgeingColor()
 
 bool BlockDeTreasure::GetoutBlock()
 {
-    if(SectionManager::run()){
-        mState = INIT_MOVE_TO_GOAL;
+    if(BlockCount == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_2;
+        }
+    }
+
+    if(BlockCount == 2)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_3;
+        }
+    }
+
+    if(BlockCount == 3)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_GOAL;
+        }
     }
 }
 
 
 bool BlockDeTreasure::GettingBlock()
 {
-   if(SectionManager::run()){
-        mState = INIT_MOVE_TO_GOAL;
+   if(BlockCount == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_2;
+        }
+    }
+
+    if(BlockCount == 2)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_3;
+        }
+    }
+
+    if(BlockCount == 3)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_GOAL;
+        }
     }
 }
 

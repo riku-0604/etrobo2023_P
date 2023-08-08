@@ -32,16 +32,16 @@ bool Scene::run()
             break;
         case SPEED:
             execSpeed();
-            msg_f("LAP  OK",5);
+            //msg_f("LAP  OK",5);
             break;
         case DOUBLELOOP:
             execDoubleLoop();
-            msg_f("DOUBLELOOP  OK",6);
+            //msg_f("DOUBLELOOP  OK",6);
             break;
         case BLOCKDETREASURE:
             //printf("BLOCKDETREASURE  OK");
             execBlockDeTreasure();
-            msg_f("BLOCKDETREASURE  OK",7);
+            //msg_f("BLOCKDETREASURE  OK",7);
             break;
         case BINGO:
             execBingo();
