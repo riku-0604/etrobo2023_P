@@ -16,6 +16,10 @@
 #include "SimpleWalker.h"
 #include "SpeedControl.h"
 #include "LineTracer.h"
+#include "ArmAngle.h"
+#include "TeelAngle.h"
+
+#include "MoveArm.h"
 
 #include "Scene.h"
 
@@ -29,6 +33,7 @@ double msg_logbuf[30000][10];
 Motor       *gLeftWheel = new Motor(PORT_C,false,LARGE_MOTOR);
 Motor       *gRightWheel = new Motor(PORT_B,false,LARGE_MOTOR);
 Motor       *gArm = new Motor(PORT_A,true,LARGE_MOTOR);
+Motor       *gTeel = new Motor(PORT_D,true,MEDIUM_MOTOR);
 
 Polling *gPolling;
 MyColorSensor *gColor;
@@ -36,6 +41,8 @@ Brightness *gBrightness;
 HsvHue *gHue;
 HsvSatu *gSatu;
 
+ArmAngle *gArmAngle;
+TeelAngle *gTeelAngle;
 
 Odometry *gOdo;
 Length *gLength;
@@ -44,6 +51,8 @@ Velocity *gVelocity;
 
 SpeedControl *gSpeed;
 SimpleWalker *gWalker;
+MoveArm *gMoveArm;
+MoveTeel *gMoveTeel;
 LineTracer *gTracer;
 Xpoint *gXpoint;
 Ypoint *gYpoint;
@@ -65,8 +74,13 @@ static void user_system_create() {
   gVelocity = new Velocity();
 
   gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity,gXpoint,gYpoint);
+  gArmAngle = new ArmAngle();
+  gTeelAngle = new TeelAngle();
+  //gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity);
   gSpeed = new SpeedControl(gOdo,gVelocity);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
+  gMoveArm = new MoveArm(gOdo);
+  gMoveTeel = new MoveTeel(gOdo);
   gTracer = new LineTracer(gOdo,gSpeed);
 
   gPolling = new Polling(gColor,gOdo);
@@ -134,8 +148,16 @@ void tracer_task(intptr_t unused) {
    // syslog(LOG_NOTICE,"%d",arm_cnt);
     int diff = -50 - arm_cnt;
 #if defined(MAKE_SIM)
-    gArm->setPWM(diff*4.0);
+    //gArm->setPWM(diff*4.0);
+    
+    double para3[] = {-50};
+#else
+    double para3[] = {0};
 #endif
+    gMoveArm->setpara (para3);
+    gMoveArm->init();
+    gMoveTeel->setpara(para3);
+    gMoveArm->init();
 
     gScene->run();
   }

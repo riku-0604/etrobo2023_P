@@ -34,7 +34,7 @@ void SimpleWalker::init()
 {
     //printf("mForward%f\n",mForward);
     setCommand(minitForward,minitTurn);
-    // printf("minitForward%f\n",minitForward);
+     //printf("minitForward%f\n",minitForward);
     // printf("minitTurn%f\n",minitTurn);
 
 }

@@ -2,6 +2,10 @@
 #define __MEASURE_H__
 
 #include "LowPassFilter.h"
+#include "Motor.h"
+#include "ev3api.h"
+
+using namespace ev3api;
 
 class Measure
 {
@@ -12,7 +16,8 @@ class Measure
 
     protected:
             LowPassFilter *mLpf;
-
+            Motor *mArm;
+            Motor *mTeel;
     private:
 
 };

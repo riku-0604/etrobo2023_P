@@ -25,6 +25,10 @@ class SectionManager {
         
          }SecParam;
 
+        void init(SecParam spara[]);
+
+        
+
     protected:
         Section *mSection[100];
         int mSectionIdx;
@@ -53,6 +57,8 @@ class SectionManager {
         /*{
             {LineTracer,},{},{},{},{}}
             */
+            
+        
     private:
 
 

@@ -1,22 +1,22 @@
-#ifndef JUDGE_COLOR
-#define JUDGE_COLOR
+#ifndef JUDGE_ARMANGLE
+#define JUDGE_ARMANGLE
 
 #include "judge.h"
 
-class JudgeColor : public Judge
+class JudgeArmAngle : public Judge
 {
     public:
-        JudgeColor();
+        JudgeArmAngle();
         void setpara(double para[]);
         bool judgement();
+
 
     protected:
         bool calcjudge();
         void init();
 
-
     private:
-        double mHuekids;
-        double mSatukids;
+        double mArmAnglekids;
+        
 };
 #endif

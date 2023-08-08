@@ -15,6 +15,7 @@ class JudgeTime : public Judge
 
     protected:
         bool calcjudge();
+        void init();
 
     private:
         double countTime;

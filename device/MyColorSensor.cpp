@@ -37,6 +37,28 @@ MyColorSensor::MyColorSensor(ePortS port,
 #endif 
 }
 
+void MyColorSensor::setRGB()
+{
+    static char str[256];
+    rgb_raw_t  raw;
+
+    printf("RGBsetOK");
+
+    mColor->getRawColor(raw);
+
+    mMax_R  = raw.r;
+    sprintf(str,"mMax_R:%d",mMax_R);
+    msg_f(str,1);
+
+    mMax_G  = raw.g;
+    sprintf(str,"mMax_G:%d",mMax_G);
+    msg_f(str,2);
+
+    mMax_B  = raw.b; 
+    sprintf(str,"mMax_B:%d",mMax_B);
+    msg_f(str,3);
+}
+
 void MyColorSensor::update()
 {
    // ColorSensor col(PORT_2);

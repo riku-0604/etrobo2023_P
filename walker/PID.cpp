@@ -5,7 +5,6 @@ PID::PID()
     :PID(0.010)
 {
 
-
 }
 
 PID::PID(double delta) {
@@ -99,6 +98,7 @@ double PID::getOperation(double value)
 
 void PID::setKp(double kp)
 {
+    //printf("kp  %f\n",kp);
     Kp = kp;
 }
 

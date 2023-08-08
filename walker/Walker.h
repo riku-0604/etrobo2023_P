@@ -16,6 +16,7 @@ class Walker
         virtual void printInfo();
         virtual void setpara(double para[])=0;
         virtual void init()=0;
+        virtual int WalkerID();
         void move();
         enum State {
             INIT,
