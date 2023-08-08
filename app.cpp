@@ -45,6 +45,8 @@ Velocity *gVelocity;
 SpeedControl *gSpeed;
 SimpleWalker *gWalker;
 LineTracer *gTracer;
+Xpoint *gXpoint;
+Ypoint *gYpoint;
 
 Scene *gScene;
 
@@ -58,9 +60,11 @@ static void user_system_create() {
   gColor = new MyColorSensor(PORT_2,gBrightness,gHue,gSatu);
   gLength = new Length();
   gTurnAngle = new TurnAngle();
+  gXpoint = new Xpoint();
+  gYpoint = new Ypoint();
   gVelocity = new Velocity();
 
-  gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity);
+  gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity,gXpoint,gYpoint);
   gSpeed = new SpeedControl(gOdo,gVelocity);  
   gWalker = new SimpleWalker(gOdo,gSpeed); 
   gTracer = new LineTracer(gOdo,gSpeed);
@@ -109,7 +113,7 @@ void polling_task(intptr_t unused) {
     double v = gVelocity->getValue();
     double h = gHue->getValue();
     double s = gSatu->getValue();
-
+    double x = gXpoint->getValue();
 
     rgb_raw_t rgb = gColor->getRgb();
     static char buf[100];

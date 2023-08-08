@@ -3,10 +3,10 @@ mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 APPL_COBJS +=
 
 APPL_CXXOBJS += \
+	MyColorSensor.o \
 	util.o \
 	Measure.o \
 	Brightness.o \
-	MyColorSensor.o \
 	Polling.o \
 	Length.o \
 	TurnAngle.o \
@@ -24,13 +24,15 @@ APPL_CXXOBJS += \
 	Section.o \
 	SectionManager.o \
 	SpeedSectionManager.o \
-	x.o \
-	y.o \
+	Xpoint.o \
+	Ypoint.o \
 	judge.o\
 	judgeLength.o\
 	judgeColor.o\
 	judgeTime.o\
-	MotorManager.o  
+	MotorManager.o \
+	curvevirtuallinetracer.o
+    
 
 SRCLANG := c++
 

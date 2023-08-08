@@ -8,6 +8,8 @@
 #include "Length.h"
 #include "TurnAngle.h"
 #include "Velocity.h"
+#include "Xpoint.h"
+#include "Ypoint.h"
 
 using namespace ev3api;
 
@@ -18,7 +20,9 @@ public:
 			Motor *right,
 			Length *len,
 			TurnAngle *angle,
-			Velocity *velo);
+			Velocity *velo,
+			Xpoint *xpoint,
+			Ypoint *ypoint);
 	void update();
 	void calc();
 	void reset();
@@ -32,6 +36,8 @@ private:
 	Length *mLength;
 	TurnAngle *mTurnAngle;
 	Velocity *mVelocity;
+	Xpoint *mxpoint;
+	Ypoint *mypoint;
 
 	int32_t current_rs1;
 	int32_t current_rs2;

@@ -10,12 +10,16 @@
 Odometry::Odometry(Motor *left, Motor *right,
 					Length *len,
 					TurnAngle *angle,
-					Velocity *velo):
+					Velocity *velo,
+					Xpoint *xpoint,
+					Ypoint *ypoint):
 	mLeftMotor(left),
 	mRightMotor(right),
 	mTurnAngle(angle),
 	mLength(len),
-	mVelocity(velo)
+	mVelocity(velo),
+	mxpoint(xpoint),
+	mypoint(ypoint)
 {
 	mLeftMotor->reset();
 	mRightMotor->reset();
@@ -76,6 +80,9 @@ void Odometry::calc()
 	
 	x+= (len_r+len_l)/2.0*cos(th+dth/2.0); //進行方向 X軸 0度方向
 	y+= (len_r+len_l)/2.0*sin(th+dth/2.0); //横	
+
+	mxpoint->update(x);
+	mypoint->update(y);
 
 	th+=dth; // 左旋回＋、右旋回-
 	sumlen += (len_r+len_l)/2.0;
