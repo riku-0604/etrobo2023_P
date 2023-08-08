@@ -15,5 +15,5 @@ double Xpoint::getValue()
 void Xpoint::update(double xpoint)
 {
     mxpoint = xpoint;
-    printf("mxpoint%f\n",mxpoint);
+    //printf("mxpoint%f\n",mxpoint);
 }

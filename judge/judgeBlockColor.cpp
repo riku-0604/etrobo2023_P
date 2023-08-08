@@ -36,13 +36,13 @@ bool JudgeBlockColor::judgement()
 
 double JudgeBlockColor::RedBlockColorCount()
 {
-    //RedBlockCount = 60;//デバック用
+    //RedBlockCount = 40;//デバック用
     return RedBlockCount;
 }
 
 double JudgeBlockColor::BlueBlockColorCount()
 {
-    //BlueBlockCount = 40;//デバック用
+    //BlueBlockCount = 60;//デバック用
     return BlueBlockCount;
 }
 

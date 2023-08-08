@@ -11,6 +11,8 @@ class BlockDeTreasure : public SectionManager {
         bool JudgeingColor();
         bool GettingBlock();
         bool MoveToGoal();
+        bool MoveToBlock2();
+        bool MoveToBlock3();
 
         bool run();
 
@@ -22,6 +24,12 @@ class BlockDeTreasure : public SectionManager {
 
             INIT_MOVE_TO_BLOCK,
             MOVE_TO_BLOCK,
+
+            INIT_MOVE_TO_BLOCK_2,
+            MOVE_TO_BLOCK_2,
+
+            INIT_MOVE_TO_BLOCK_3,
+            MOVE_TO_BLOCK_3,
 
             INIT_GETOUT_BLOCK,
             GETOUT_BLOCK,
@@ -78,7 +86,17 @@ class BlockDeTreasure : public SectionManager {
         
 
         SecParam IntoBlockDeTreasurepara[100] = {
-            {Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
+            //{Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            //{Section::TEEL,{-70},Section::TEELANGLE,{-4000},Section::NONE,{}},
+            {Section::TEEL,{70},Section::TEELANGLE,{4300},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},
+
+
+            //{Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
             {Section::WALKER,{0, -20},Section::TURNANGLE,{80},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
@@ -107,6 +125,33 @@ class BlockDeTreasure : public SectionManager {
             {Section::END,{},Section::ENDJ,{}},
         };
 
+        SecParam MoveToBlockpara2[100] = {
+            {Section::WALKER,{0, 40},Section::TURNANGLE,{-180},Section::NONE,{}},
+            /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+            /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+
+            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+        SecParam MoveToBlockpara3[100] = {
+            {Section::WALKER,{0, -40},Section::TURNANGLE,{180},Section::NONE,{}},
+            /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+            /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+
+
+            
+            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
         
         SecParam JudgeingColorpara[100] = {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
@@ -130,7 +175,7 @@ class BlockDeTreasure : public SectionManager {
         SecParam GettingBlockpara[100] = {
             {Section::WALKER,{40, 0},Section::LENGTH,{20},Section::NONE,{}},
             {Section::WALKER,{0, 20},Section::TURNANGLE,{-90},Section::NONE,{}},
-            {Section::WALKER,{20, 0},Section::LENGTH,{100},Section::NONE,{}},
+            {Section::WALKER,{20, 0},Section::LENGTH,{50},Section::NONE,{}},
 
             //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},

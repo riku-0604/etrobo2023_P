@@ -15,5 +15,5 @@ double Ypoint::getValue()
 void Ypoint::update(double ypoint)
 {
     mypoint = ypoint;
-    printf("mypoint%f\n",mypoint);
+    //printf("mypoint%f\n",mypoint);
 }
