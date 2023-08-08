@@ -1,15 +1,33 @@
 #include "curvevirtuallinetracer.h"
 #include "math.h"
 
+
+curvevirtuallinetracer::curvevirtuallinetracer(Odometry *odo,SpeedControl *scon):
+SimpleWalker(odo,scon)
+{
+
+}
+
 void curvevirtuallinetracer::run()
 {
-    
-    
-    //mTurn = calcTurn();
-    setCommandV((int)mTargetSpeed, (int)mTurn);
+    mx = mXpoint->getValue();
+    my = mYpoint->getValue();
+    mangle = mTurnAngle->getValue();
+    sensorpoint(mx,my,mangle);
+    radius = twopointlength(sensorx,sensory,centerx,centery);
+    mTurn = calcTurn(radius);
+    setCommandV((int)mspeed, (int)mTurn);
 
     SimpleWalker::run();
 
+}
+
+void curvevirtuallinetracer::init()
+{
+    mx = mXpoint->getValue();
+    my = mYpoint->getValue();
+    mangle = mTurnAngle->getValue();
+    centorpoint(rad,mx,my,mangle);
 }
 
 double curvevirtuallinetracer::calcTurn(double val1) 
@@ -26,6 +44,25 @@ double curvevirtuallinetracer::calcTurn(double val1)
     return turn;
 }
 
+void curvevirtuallinetracer::setpara(double para3[])
+{
+
+    rad = para3[0];//半径
+    mspeed = para3[1];//速度
+    mp = para3[2];//P
+    mi = para3[3];//I
+    md = para3[4];//D
+
+
+    mangle = mTurnAngle->getValue();//旋回角度
+
+
+    mPid->setTarget(fabs (rad));
+    mPid->setKp(mp); 
+    mPid->setKi(mi);
+    mPid->setKd(md);
+}
+
 double curvevirtuallinetracer::twopointlength(double x,double y,double xx,double yy)
 {
     len = sqrt((xx-x)*(xx-x) + (yy-y)*(yy-y));
@@ -34,8 +71,8 @@ double curvevirtuallinetracer::twopointlength(double x,double y,double xx,double
 
 double curvevirtuallinetracer::centorpoint(double rad,double x,double y,double angle)
 {
-    centerx = (rad*cos((M_PI / 180)*angle)) + x;
-    centery = (rad*sin((M_PI / 180)*angle)) + y;
+    centerx = (rad*-sin((M_PI / 180)*angle)) + x;
+    centery = (rad*cos((M_PI / 180)*angle)) + y;
 }
 
 double curvevirtuallinetracer::sensorpoint(double x,double y,double angle)

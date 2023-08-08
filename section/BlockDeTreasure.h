@@ -44,23 +44,24 @@ class BlockDeTreasure : public SectionManager {
 
         int WinnerColor;
         int BlockCount = 0;
-        /*”»’è
-            LENGTH,{’·‚³}
-            TIME,{ŠÔ}
-            COLOR,{F,Ê“x}
-            BLOCKCOLOR,{ÔƒuƒƒbƒN,ÂƒuƒƒbƒN,Ê“x,ŠÔ}
-            TURNANGLE,{ù‰ñŠp“x}  //‘–s‘Ì‚ªó‚¯æ‚é’l‚Í‰E‰ñ“]‚ªƒ}ƒCƒiƒXA¶‰ñ“]‚Íƒvƒ‰ƒX//
-            ARMANGLE,{ƒA[ƒ€Šp“x}
-            TEELANGLE,{‚µ‚Á‚Û‚Ì–Ú•WŠp“x}
+        /*ï¿½ï¿½ï¿½ï¿½
+            LENGTH,{ï¿½ï¿½ï¿½ï¿½}
+            TIME,{ï¿½ï¿½ï¿½ï¿½}
+            COLOR,{ï¿½F,ï¿½Ê“x}
+            BLOCKCOLOR,{ï¿½Ôƒuï¿½ï¿½ï¿½bï¿½N,ï¿½Âƒuï¿½ï¿½ï¿½bï¿½N,ï¿½Ê“x,ï¿½ï¿½ï¿½ï¿½}
+            TURNANGLE,{ï¿½ï¿½ï¿½ï¿½pï¿½x}  //ï¿½ï¿½ï¿½sï¿½Ì‚ï¿½ï¿½ó‚¯ï¿½ï¿½lï¿½Í‰Eï¿½ï¿½]ï¿½ï¿½ï¿½}ï¿½Cï¿½iï¿½Xï¿½Aï¿½ï¿½ï¿½ï¿½]ï¿½Íƒvï¿½ï¿½ï¿½X//
+            ARMANGLE,{ï¿½Aï¿½[ï¿½ï¿½ï¿½pï¿½x}
+            TEELANGLE,{ï¿½ï¿½ï¿½ï¿½ï¿½Û‚Ì–Ú•Wï¿½pï¿½x}
             ENDJ,
             NONE
             */
 
-           /*“®ì
-            WALKER,{‘Oi‚Ìƒpƒ[,ù‰ñ‚Ìƒpƒ[}  //ù‰ñ‚Ìƒpƒ[‚Í‰E‰ñ“]‚ªƒvƒ‰ƒXA¶‰ñ“]‚Íƒ}ƒCƒiƒX//
-            TRACER,{‘¬“x,”’•,P,I,D,Šp“x–Ú•W’l,ù‰ñ‚ÌP}
-            ARM,{–Ú•W‚ÌƒA[ƒ€‚ÌŠp“x}
-            TEEL,{‚µ‚Á‚Û‚Ìƒ‚[ƒ^[‚Ì‹­‚³}
+           /*ï¿½ï¿½ï¿½ï¿½
+            WALKER,{ï¿½Oï¿½iï¿½Ìƒpï¿½ï¿½ï¿½[,ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½ï¿½ï¿½[}  //ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½ï¿½ï¿½[ï¿½Í‰Eï¿½ï¿½]ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Xï¿½Aï¿½ï¿½ï¿½ï¿½]ï¿½Íƒ}ï¿½Cï¿½iï¿½X//
+            TRACER,{ï¿½ï¿½ï¿½x,ï¿½ï¿½ï¿½ï¿½,P,I,D,ï¿½pï¿½xï¿½Ú•Wï¿½l,ï¿½ï¿½ï¿½ï¿½ï¿½P}
+            ARM,{ï¿½Ú•Wï¿½ÌƒAï¿½[ï¿½ï¿½ï¿½ÌŠpï¿½x}
+            TEEL,{ï¿½ï¿½ï¿½ï¿½ï¿½Û‚Ìƒï¿½ï¿½[ï¿½^ï¿½[ï¿½Ì‹ï¿½ï¿½ï¿½}
+            VIRTUALCURVE,{åŠå¾„,é€Ÿåº¦,P,I,D}
             END
             */
            
@@ -71,17 +72,22 @@ class BlockDeTreasure : public SectionManager {
             {Section::ARM,{55},Section::BLOCKCOLOR,{13,200,0.5,400},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
 
-            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//~‚Ü‚é
+            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//ï¿½~ï¿½Ü‚ï¿½
 
             {Section::END,{},Section::ENDJ,{}},
         };*/
         
 
         SecParam IntoBlockDeTreasurepara[100] = {
-            {Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
+            /*{Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
             {Section::WALKER,{0, -20},Section::TURNANGLE,{80},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+            //{Section::VIRTUALCURVE,{}}
+            {Section::WALKER,{60, 0},Section::LENGTH,{40},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{20,50,30,10,9},Section::LENGTH,{100},Section::NONE,{}},
+
             //{Section::WALKER,{0, -20},Section::TURNANGLE,{60},Section::NONE,{}},
             //{Section::WALKER,{40, 0},Section::LENGTH,{55},Section::NONE,{}},
             //{Section::TRACER,{60, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{40},Section::NONE,{}},
@@ -89,7 +95,9 @@ class BlockDeTreasure : public SectionManager {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
-            
+
+
+            {Section::WALKER,{0, 0},Section::LENGTH,{1000},Section::NONE,{}},//æ­¢ã¾ã‚‹
 
             {Section::END,{},Section::ENDJ,{}},
         };
@@ -113,6 +121,7 @@ class BlockDeTreasure : public SectionManager {
             {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
 
+            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//æ­¢ã¾ã‚‹
             {Section::END,{},Section::ENDJ,{}},
         };
 

@@ -1,7 +1,13 @@
 #include "Walker.h"
 
+extern Xpoint *gXpoint;
+extern Ypoint *gYpoint;
+extern TurnAngle *gTurnAngle;
 Walker::Walker( Odometry *odo):
     mOdo(odo),
+    mXpoint(gXpoint),
+    mYpoint(gYpoint),
+    mTurnAngle(gTurnAngle),
     mState(INIT)
 {
     mPid = new PID();

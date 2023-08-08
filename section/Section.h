@@ -23,6 +23,7 @@ class Section {
             TRACER,
             ARM,
             TEEL,
+            VIRTUALCURVE,
             END
         };
 

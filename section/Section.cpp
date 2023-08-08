@@ -6,6 +6,7 @@
 #include "judgeTurnAngle.h"
 #include "judgeArmAngle.h"
 #include "judgeTeelAngle.h"
+#include "curvevirtuallinetracer.h"
 
 #include "MoveArm.h"
 
@@ -103,6 +104,9 @@ Walker *Section::selectWalker(int no)
         case TEEL:
             mWalker = (Walker*)(new MoveTeel(gOdo));
             //printf("TEELOK\n");
+            break;
+        case VIRTUALCURVE:
+            mWalker = (Walker*)(new curvevirtuallinetracer(gOdo,gSpeed));
             break;
         case END:
             break;

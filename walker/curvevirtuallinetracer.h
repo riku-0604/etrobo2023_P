@@ -9,8 +9,10 @@
 
 class curvevirtuallinetracer : public SimpleWalker {
     public :
+        curvevirtuallinetracer(Odometry *odo,SpeedControl *scon);
         void run();
-        void setParam(double rad,double speed,double angle, double ki, double kd);
+        void setpara(double para3[]);
+        void init();
 
     protected :
 
@@ -46,6 +48,17 @@ class curvevirtuallinetracer : public SimpleWalker {
         int mLimit;  
 
         double mTracerkids;
+        double radius;
+
+        double rad;
+        double mspeed;
+        double mp;
+        double mi;
+        double md;
+
+        double mx;
+        double my;
+        double mangle;
 };
 
 #endif

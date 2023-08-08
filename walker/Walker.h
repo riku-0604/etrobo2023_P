@@ -4,6 +4,9 @@
 #include "Odometry.h"
 #include "Brightness.h"
 #include "PID.h"
+#include "Xpoint.h"
+#include "Ypoint.h"
+#include "TurnAngle.h"
 
 extern Brightness *gBrightness;
 
@@ -29,6 +32,9 @@ class Walker
         Brightness *mBright;
 
         State mState;
+        Xpoint *mXpoint;
+        Ypoint *mYpoint;
+        TurnAngle *mTurnAngle;
 
     private:
 
