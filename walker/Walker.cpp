@@ -9,9 +9,15 @@ Walker::Walker( Odometry *odo):
     mBright = gBrightness;
 }
 
-
+int Walker::WalkerID()
+{
+    //printf(" Walker WalkerID");
+    return 0;
+    
+}
 void Walker::move()
 {
+    //printf("%d\n",mState);
     switch(mState) {
         case INIT:
             init();
@@ -29,7 +35,7 @@ void Walker::run()
 
 void Walker::init()
 {
-    //printf("initOK");
+    //printf("Walker  initOK");
 }
 
 

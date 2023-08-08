@@ -1,12 +1,12 @@
-#ifndef JUDGE_LENGTH
-#define JUDGE_LENGTH
+#ifndef JUDGE_TEELANGLE
+#define JUDGE_TEELANGLE
 
 #include "judge.h"
 
-class JudgeLength : public Judge
+class JudgeTeelAngle : public Judge
 {
     public:
-        JudgeLength();
+        JudgeTeelAngle();
         void setpara(double para[]);
         bool judgement();
 
@@ -16,9 +16,8 @@ class JudgeLength : public Judge
         void init();
 
     private:
-        double mLengthkids;
-        double mSumLengthkids;
+        double mTeelAnglekids;
+        double mSumTeelAnglekids;
         double firstvalue;
-        bool mdirect;
 };
 #endif

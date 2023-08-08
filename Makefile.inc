@@ -14,8 +14,12 @@ APPL_CXXOBJS += \
 	Velocity.o \
 	HsvHue.o \
 	HsvSatu.o \
+	ArmAngle.o\
+	TeelAngle.o\
 	PID.o \
 	SimpleWalker.o \
+	MoveArm.o\
+	MoveTeel.o\
 	SpeedControl.o \
 	Walker.o \
 	LineTracer.o \
@@ -24,12 +28,18 @@ APPL_CXXOBJS += \
 	Section.o \
 	SectionManager.o \
 	SpeedSectionManager.o \
+	DoubleLoop.o\
+	BlockDeTreasure.o\
 	x.o \
 	y.o \
 	judge.o\
 	judgeLength.o\
 	judgeColor.o\
+	judgeBlockColor.o\
 	judgeTime.o\
+	judgeTurnAngle.o\
+	judgeArmAngle.o\
+	judgeTeelAngle.o\
 	MotorManager.o  
 
 SRCLANG := c++

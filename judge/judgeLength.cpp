@@ -5,6 +5,14 @@
 
 JudgeLength::JudgeLength()
 {
+ 
+}
+
+void JudgeLength::init()
+{
+    //printf("JudgeLengthinitOK");
+    firstvalue = mLength->getValue();
+    mSumLengthkids = mLengthkids + firstvalue;
 }
 
 void JudgeLength::setpara(double para[])
@@ -21,11 +29,24 @@ bool JudgeLength::calcjudge()
 {
     // printf("%f\n",mLengthkids);
     // printf("%f\n", mLength->getValue());
-    if(mLengthkids <= mLength->getValue())
+    if(mLengthkids<0)
     {
-        return true;
+        if(mSumLengthkids >= mLength->getValue())
+        {
+            return true;
+        }
+        
+        return false;
     }
+    else
+    {
+        if(mSumLengthkids <= mLength->getValue())
+        {
+            return true;
+        }
 
-    return false;
+        return false;
+    }
+    
 }
 

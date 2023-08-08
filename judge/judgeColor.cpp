@@ -7,6 +7,11 @@ JudgeColor::JudgeColor()
 {
 }
 
+void JudgeColor::init()
+{
+    
+}
+
 void JudgeColor::setpara(double para[])
 {
     mHuekids = para[0];//Šó–]‚ÌF‚Ì”ÍˆÍ‚Ì’†‰›’l

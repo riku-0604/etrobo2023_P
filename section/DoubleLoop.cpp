@@ -1,11 +1,11 @@
-#include "SpeedSectionManager.h"
+#include "DoubleLoop.h"
 #include "Section.h"
 
 #include "ev3api.h"
 
-SpeedSectionManager::SpeedSectionManager()
+DoubleLoop::DoubleLoop()
 {
-    // testç”¨åˆæœŸï¿½?
+    // test—p‰Šú??
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;
 #else
@@ -21,7 +21,7 @@ SpeedSectionManager::SpeedSectionManager()
     selectjudge->setpara(para);
 
 
-    // LineTracer ï¿½?ã‚¹ï¿½?
+    // LineTracer ??ƒX??
     LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
     double para2[]={28, -0.25,  30, 70, 6.2525,0,0,_EDGE};
     tracer->setpara(para2);
@@ -29,7 +29,7 @@ SpeedSectionManager::SpeedSectionManager()
     
     Section *sc1 = new Section();
     
-    // SimpleWalkerï¿½?ã‚¹ï¿½?
+    // SimpleWalker??ƒX??
     SimpleWalker* walker = (SimpleWalker*)sc1->selectWalker(Section::WALKER);
     double para3[] = {0,0};
     walker->setpara(para3);
@@ -42,9 +42,6 @@ SpeedSectionManager::SpeedSectionManager()
     
     addSection(sc1);*/
    // printf("roopOK");
-
-
-    
 
 }
 

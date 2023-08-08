@@ -5,6 +5,8 @@
 #include "SimpleWalker.h"
 
 #include "Walker.h"
+#include "MoveArm.h"
+#include "MoveTeel.h"
 #include "judge.h"
 
 
@@ -15,10 +17,12 @@ class Section {
         virtual bool run();
         Walker *selectWalker(int no);
         Judge *selectJudge(int no);
-
+        int returnValue();
         enum WALKER_NO {
             WALKER,
             TRACER,
+            ARM,
+            TEEL,
             END
         };
 
@@ -26,15 +30,22 @@ class Section {
             LENGTH,
             TIME,
             COLOR,
+            BLOCKCOLOR,
+            TURNANGLE,
+            ARMANGLE,
+            TEELANGLE,
             ENDJ,
             NONE
         };
 
     protected:
         Walker *mWalker;
+        MoveArm *mMoveArm;
+        MoveTeel *mMoveTeel;
         Judge *mJudge;
 
     private:
+    int value = -1;
 
 };
 

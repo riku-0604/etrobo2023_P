@@ -4,6 +4,9 @@
 #include "Length.h"
 #include "HsvHue.h"
 #include "HsvSatu.h"
+#include "TurnAngle.h"
+#include "ArmAngle.h"
+#include "TeelAngle.h"
 
 class Judge
 {
@@ -12,22 +15,30 @@ class Judge
         virtual bool judgement();
         virtual void setpara(double para[]);
         virtual void init();
+        virtual int  returnmode();
+        bool state();
+        virtual int JudgeID();
+       
 
     protected:
         virtual bool calcjudge()=0;
+        
         Length *mLength;
         HsvHue *mHue;     //Color
         HsvSatu *mSatu;  //Color
-    enum State {
+        TurnAngle *mTurnAngle;
+        ArmAngle *mArmAngle;
+        TeelAngle *mTeelAngle;
+
+        enum State {
         INIT,
-        JUDGEMENT,
-        COLOR,
-        TIME,
-        END
+        JUDGEMENT
     };
 
-    private:
+    State mState;
 
+    private:
+        
 };
 
 #endif
