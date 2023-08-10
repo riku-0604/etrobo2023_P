@@ -18,8 +18,8 @@ class straightvirtuallinetracer : public SimpleWalker {
 
     private:
         double line(double tx,double ty,double sx,double sy,double mx,double my);
-        double targetpoint(double x,double y,double angle);
-        double sensorpoint(double x,double y,double angle);
+        void targetpoint(double x,double y,double angle);
+        void sensorpoint(double x,double y,double angle);
         double len;
         double sl = 5;
         double targetx;

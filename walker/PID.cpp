@@ -4,7 +4,6 @@
 PID::PID()
     :PID(0.010)
 {
-
 }
 
 PID::PID(double delta) {

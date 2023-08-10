@@ -11,14 +11,31 @@ mBias(0)
 
 void straightvirtuallinetracer::run()
 {
-    mx = mXpoint->getValue();
-    my = mYpoint->getValue();
+    //mx = mXpoint->getValue();
+    //my = mYpoint->getValue();
+
+    /*printf("mx%f\n",mx);
+    printf("my%f\n",my);
+
+    printf("targetx%f\n",targetx);
+    printf("targety%f\n",targety);
+
+    printf("sensorx%f\n",sensorx);
+    printf("sensory%f\n",sensory);*/
+
+
+
+    double sensorx4;
+    double sensory4;
+    sensorx4 = mXpoint->getValue();
+    sensory4 = mYpoint->getValue();
+
     mangle = mTurnAngle->getValue();
-    sensorpoint(mx,my,mangle);
+    sensorpoint(sensorx4,sensory4,mangle);
     mline = line(targetx,targety,sensorx,sensory,mx,my);
     //printf("%f\n",mline);
     mTurn = calcTurn(mline);
-    setCommandV((int)mspeed, (int)mTurn);
+    setCommand((int)mspeed, (int)mTurn);
 
     SimpleWalker::run();
 
@@ -28,10 +45,12 @@ void straightvirtuallinetracer::init()
 {
     mx = mXpoint->getValue();
     my = mYpoint->getValue();
+
     mangle = mTurnAngle->getValue();
+
     //printf("mangle  %f\n",mangle);
     //printf("lineangle  %f\n",lineangle);
-    targetpoint(mx,my,lineangle);
+    targetpoint(mx,my,lineangle + mangle);
     //sensorpoint(mx,my,mangle);
     //mline = line(targetx,targety,sensorx,sensory,mx,my);
 
@@ -44,10 +63,10 @@ double straightvirtuallinetracer::calcTurn(double val1)
   //  mPid->debug=true;
 
     //if(val1 > 0) 
-    val1_turn = -val1_turn;
+    //val1_turn = -val1_turn;
     //setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
-    setBias(mCurve);
-    double turn =  val1_turn+mBias;
+    //setBias(mCurve);
+    double turn =  val1_turn + mBias;
    
     return turn;
 }
@@ -55,7 +74,7 @@ double straightvirtuallinetracer::calcTurn(double val1)
 void straightvirtuallinetracer::setpara(double para3[])
 {
 
-    lineangle = para3[0];//描きたい直線の角度
+    lineangle = para3[0];//描きたい直線�?�角度
     mspeed = para3[1];//速度
     mp = para3[2];//P
     mi = para3[3];//I
@@ -83,13 +102,14 @@ double straightvirtuallinetracer::line(double tx,double ty,double sx,double sy,d
     return mline;
 }
 
-double straightvirtuallinetracer::targetpoint(double x,double y,double angle)
+void straightvirtuallinetracer::targetpoint(double x,double y,double angle)
 {
     targetx = (cos((M_PI / 180)*angle)) + x;
     targety = (sin((M_PI / 180)*angle)) + y;
+    //printf("targetOK");
 }
 
-double straightvirtuallinetracer::sensorpoint(double x,double y,double angle)
+void straightvirtuallinetracer::sensorpoint(double x,double y,double angle)
 {
     sensorx = (sl*cos((M_PI / 180)*angle)) + x;
     sensory = (sl*sin((M_PI / 180)*angle)) + y;
