@@ -36,10 +36,7 @@ double curvevirtuallinetracer::calcTurn(double val1) //setparaの半径の値がマイナ
 
     //  mPid->debug=true;
 
-
     if(rad < 0) val1_turn = -val1_turn;
-
-
     //setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
     setBias(mCurve);
 

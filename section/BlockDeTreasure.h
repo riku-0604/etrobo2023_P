@@ -140,6 +140,29 @@ class BlockDeTreasure : public SectionManager {
             {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},
             
 
+
+            //{Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
+            {Section::WALKER,{0, -20},Section::TURNANGLE,{80},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+            //{Section::VIRTUALCURVE,{}}
+            {Section::WALKER,{20, 0},Section::LENGTH,{30},Section::NONE,{}},
+
+            {Section::TURNWALKER,{25},Section::TURNANGLE,{-90},Section::NONE,{}},
+            //{Section::VIRTUALSTRAIGHT,{-45,20,15,5,3},Section::LENGTH,{50},Section::NONE,{}},
+
+
+            //{Section::WALKER,{0, -20},Section::TURNANGLE,{60},Section::NONE,{}},
+            //{Section::WALKER,{40, 0},Section::LENGTH,{55},Section::NONE,{}},
+            //{Section::TRACER,{60, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{40},Section::NONE,{}},
+            /*{Section::WALKER,{40, 0},Section::LENGTH,{38},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+
+
+            {Section::WALKER,{0, 0},Section::LENGTH,{1000},Section::NONE,{}},//止ま�?
+
             {Section::END,{},Section::ENDJ,{}},
         };
 

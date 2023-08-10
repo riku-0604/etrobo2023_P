@@ -7,6 +7,7 @@
 #include "Xpoint.h"
 #include "Ypoint.h"
 #include "TurnAngle.h"
+#include "Length.h"
 
 extern Brightness *gBrightness;
 
@@ -35,6 +36,7 @@ class Walker
         Xpoint *mXpoint;
         Ypoint *mYpoint;
         TurnAngle *mTurnAngle;
+        Length *mLength;
 
     private:
 

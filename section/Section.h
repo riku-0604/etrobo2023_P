@@ -26,6 +26,8 @@ class Section {
             TEEL,
             VIRTUALCURVE,
             DEFOLTARMCHANGE,
+            VIRTUALSTRAIGHT,
+            TURNWALKER,
             END
         };
 

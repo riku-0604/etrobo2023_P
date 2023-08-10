@@ -42,7 +42,9 @@ APPL_CXXOBJS += \
 	curvevirtuallinetracer.o \
     judgeTurnAngle.o \
 	judgeArmAngle.o \
-	judgeTeelAngle.o 
+	judgeTeelAngle.o \
+	straightvirtuallinetracer.o \
+	TurnWalker.o 
 
 SRCLANG := c++
 

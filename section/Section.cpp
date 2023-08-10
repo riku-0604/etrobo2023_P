@@ -7,7 +7,8 @@
 #include "judgeArmAngle.h"
 #include "judgeTeelAngle.h"
 #include "curvevirtuallinetracer.h"
-
+#include "straightvirtuallinetracer.h"
+#include "TurnWalker.h"
 #include "MoveArm.h"
 
 
@@ -110,6 +111,12 @@ Walker *Section::selectWalker(int no)
             break;
         case VIRTUALCURVE:
             mWalker = (Walker*)(new curvevirtuallinetracer(gOdo,gSpeed));
+            break;
+        case VIRTUALSTRAIGHT:
+            mWalker = (Walker*)(new straightvirtuallinetracer(gOdo,gSpeed));
+            break;
+        case TURNWALKER:
+            mWalker = (Walker*)(new TurnWalker(gOdo,gSpeed));
             break;
         case END:
             break;
