@@ -144,7 +144,7 @@ class BlockDeTreasure : public SectionManager {
             //{Section::WALKER,{40, 0},Section::LENGTH,{52},Section::NONE,{}},
             {Section::WALKER,{0, -20},Section::TURNANGLE,{80},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             //{Section::VIRTUALCURVE,{}}
             {Section::WALKER,{20, 0},Section::LENGTH,{30},Section::NONE,{}},
 

@@ -44,7 +44,7 @@ APPL_CXXOBJS += \
 	judgeArmAngle.o \
 	judgeTeelAngle.o \
 	straightvirtuallinetracer.o \
-	TurnWalker.o 
+	TurnWalker.o
 
 SRCLANG := c++
 
@@ -67,5 +67,3 @@ INCLUDES += \
 
 # COPTS += -fno-use-cxa-atexit
 COPTS += -std=c++11
-
-COPTS += -DMAKE_EV3
