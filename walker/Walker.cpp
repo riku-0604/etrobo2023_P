@@ -3,11 +3,13 @@
 extern Xpoint *gXpoint;
 extern Ypoint *gYpoint;
 extern TurnAngle *gTurnAngle;
+extern Length *gLength;
 Walker::Walker( Odometry *odo):
     mOdo(odo),
     mXpoint(gXpoint),
     mYpoint(gYpoint),
     mTurnAngle(gTurnAngle),
+    mLength(gLength),
     mState(INIT)
 {
     mPid = new PID();

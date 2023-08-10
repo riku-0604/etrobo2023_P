@@ -24,6 +24,8 @@ class Section {
             ARM,
             TEEL,
             VIRTUALCURVE,
+            VIRTUALSTRAIGHT,
+            TURNWALKER,
             END
         };
 

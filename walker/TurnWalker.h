@@ -1,5 +1,5 @@
-#ifndef STRAIGHTVIRTUALLINETRACER_H
-#define STRAIGHTVIRTUALLINETRACER_H
+#ifndef TURNWALKER_H
+#define TURNWALKER_H
 
 #include "SimpleWalker.h"
 #include "Measure.h"
@@ -7,9 +7,9 @@
 #include "SpeedControl.h"
 #include <math.h>
 
-class straightvirtuallinetracer : public SimpleWalker {
+class TurnWalker : public SimpleWalker {
     public :
-        straightvirtuallinetracer(Odometry *odo,SpeedControl *scon);
+        TurnWalker(Odometry *odo,SpeedControl *scon);
         void run();
         void setpara(double para3[]);
         void init();
@@ -17,9 +17,6 @@ class straightvirtuallinetracer : public SimpleWalker {
     protected :
 
     private:
-        double line(double tx,double ty,double sx,double sy,double mx,double my);
-        double targetpoint(double x,double y,double angle);
-        double sensorpoint(double x,double y,double angle);
         double len;
         double sl = 5;
         double targetx;
@@ -30,10 +27,9 @@ class straightvirtuallinetracer : public SimpleWalker {
         double calcTurn(double val1);
         void setBias(double curve);
 
-        double mSpeed;
+        double mSpeed=0;
 
         int mTargetSpeed;
-        double mTarget;
         double mPFactor;
         double mIFactor;
         double mDFactor;
@@ -50,14 +46,13 @@ class straightvirtuallinetracer : public SimpleWalker {
         double mTracerkids;
         double mline;
 
-        double lineangle;
-        double mspeed;
         double mp;
         double mi;
         double md;
 
-        double mx;
-        double my;
+        double mlen;
+        double slen;
+        double calclen;
         double mangle;
 };
 
