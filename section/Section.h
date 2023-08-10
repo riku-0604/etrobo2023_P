@@ -7,6 +7,7 @@
 #include "Walker.h"
 #include "MoveArm.h"
 #include "MoveTeel.h"
+#include "ChangeDefoltArm.h" 
 #include "judge.h"
 
 
@@ -24,6 +25,7 @@ class Section {
             ARM,
             TEEL,
             VIRTUALCURVE,
+            DEFOLTARMCHANGE,
             END
         };
 
@@ -43,6 +45,7 @@ class Section {
         Walker *mWalker;
         MoveArm *mMoveArm;
         MoveTeel *mMoveTeel;
+
         Judge *mJudge;
 
     private:

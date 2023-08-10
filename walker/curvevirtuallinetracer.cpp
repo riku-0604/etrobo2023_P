@@ -30,16 +30,24 @@ void curvevirtuallinetracer::init()
     centorpoint(rad,mx,my,mangle);
 }
 
-double curvevirtuallinetracer::calcTurn(double val1) 
+double curvevirtuallinetracer::calcTurn(double val1) //setpara‚Ì”¼Œa‚Ì’l‚ªƒ}ƒCƒiƒX‚©ƒvƒ‰ƒX‚©‚Åif•¶‚ğl‚¦‚é‚©‚ÂŒvZ‚à‚©‚¦‚éBsetBias‚ğÀ‘•‚·‚é‚©‚ÍÀ‹@‚ª‹È‚ª‚ê‚é‚©‹È‚ª‚ê‚È‚¢‚©Ÿ‘æ
 {
     double val1_turn =  mPid->getOperation(val1);
 
-  //  mPid->debug=true;
+    //  mPid->debug=true;
 
-    if(mLeftEdge) val1_turn = -val1_turn;
+
+    if(rad < 0) val1_turn = -val1_turn;
+
+
     //setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
     setBias(mCurve);
-    double turn =  val1_turn+mBias;
+
+    double turn;
+
+    turn =  val1_turn + mBias;
+
+    
    
     return turn;
 }
@@ -47,14 +55,14 @@ double curvevirtuallinetracer::calcTurn(double val1)
 void curvevirtuallinetracer::setpara(double para3[])
 {
 
-    rad = para3[0];//åŠå¾„
-    mspeed = para3[1];//é€Ÿåº¦
+    rad = para3[0];//”¼Œa
+    mspeed = para3[1];//‘¬“x
     mp = para3[2];//P
     mi = para3[3];//I
     md = para3[4];//D
 
 
-    mangle = mTurnAngle->getValue();//æ—‹å›è§’åº¦
+    mangle = mTurnAngle->getValue();//ù‰ñŠp“x
 
 
     mPid->setTarget(fabs (rad));

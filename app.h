@@ -20,6 +20,7 @@ extern void tracer_task(intptr_t exinf);
 
 static void user_system_create();
 static void user_system_destroy();
+void setDefoltArm(double para3);
 
 #endif /* TOPPERS_MACRO_ONLY */
 

@@ -31,8 +31,9 @@ class SpeedSectionManager : public SectionManager {
             */
            
         SecParam spara [100] = {
-            //{Section::WALKER,{60, 0},Section::TIME,{50},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+           // {Section::WALKER,{60, 0},Section::TIME,{200},Section::NONE,{}},
             /*{Section::ARM,{60},Section::BLOCKCOLOR,{13,200,0.5,100},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
             //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},

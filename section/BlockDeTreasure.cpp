@@ -85,6 +85,7 @@ bool BlockDeTreasure::run()
         case INTO_BLOCK_DE_TREASURE:
             //printf("INTO_BLOCK_DE_TREASURE");
             IntoBlockDeTreasure();
+            
             break;
         case INIT_MOVE_TO_BLOCK:
             init(MoveToBlockpara);

@@ -1,7 +1,0 @@
-#ifndef STRAIGHTVIRTUALLINETRACER_H
-#define STRAIGHTVIRTUALLINETRACER_H
-
-#include "SimpleWalker"
-
-
-#endif  

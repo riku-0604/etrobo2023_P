@@ -105,6 +105,9 @@ Walker *Section::selectWalker(int no)
             mWalker = (Walker*)(new MoveTeel(gOdo));
             //printf("TEELOK\n");
             break;
+        case DEFOLTARMCHANGE:
+            mWalker = (Walker*)(new ChangeDefoltArm(gOdo));
+            break;
         case VIRTUALCURVE:
             mWalker = (Walker*)(new curvevirtuallinetracer(gOdo,gSpeed));
             break;

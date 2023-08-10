@@ -87,6 +87,17 @@ static void user_system_create() {
 
   gScene = new Scene();
 
+  double Armpara;
+
+#if defined(MAKE_SIM)
+    //gArm->setPWM(diff*4.0);
+
+    Armpara = -50;
+#else
+    Armpara = 0;
+#endif
+  setDefoltArm(Armpara);
+
 }
 static void user_system_destroy() {
 
@@ -147,20 +158,27 @@ void tracer_task(intptr_t unused) {
     int arm_cnt = gArm->getCount();
    // syslog(LOG_NOTICE,"%d",arm_cnt);
     int diff = -50 - arm_cnt;
-#if defined(MAKE_SIM)
-    //gArm->setPWM(diff*4.0);
+
     
-    double para3[] = {-50};
-#else
-    double para3[] = {0};
-#endif
-    gMoveArm->setpara (para3);
-    gMoveArm->init();
-    gMoveTeel->setpara(para3);
-    gMoveArm->init();
 
     gScene->run();
   }
 
   ext_tsk();
+}
+
+void setDefoltArm(double para3)
+{
+  double para4[1];
+  double para5[1];
+
+  para4[0] = para3;
+  para5[0] = 0;
+
+
+  gMoveArm->setpara (para4);
+  gMoveArm->init();
+
+  gMoveTeel->setpara(para5);
+  gMoveArm->init();
 }

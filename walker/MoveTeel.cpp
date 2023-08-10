@@ -12,6 +12,7 @@ MoveTeel::MoveTeel(Odometry *odo):Walker(odo)
 
 int MoveTeel::WalkerID()
 {
+    
     return Section::TEEL;
 }
 
@@ -20,7 +21,6 @@ void MoveTeel::run()
 {
     //printf("runteel");
     // mTeelForward  //–Ú•W’l
-
     gTeel->setPWM(mTeelForward);
 
 

@@ -1,4 +1,5 @@
 #include "Scene.h"
+#include "app.h"
 
 #include "ev3api.h"
 
@@ -109,6 +110,7 @@ void Scene::execBlockDeTreasure()
     if(mBdt->run()){
         delete mBdt;
         mState = END;
+    
     }
 }
 void Scene::execBingo()
