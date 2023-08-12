@@ -86,7 +86,7 @@ bool BlockDeTreasure::run()
             IntoBlockDeTreasure();
             break;
         case INIT_MOVE_TO_BLOCK:
-            init(SelectMoveToBlockpara[BlockCount]);
+            init(MoveToBlockpara);
             mState = MOVE_TO_BLOCK;
             break;
 
@@ -95,7 +95,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_2:
-            init(SelectMoveToBlockpara[BlockCount]);
+            init(MoveToBlockpara2);
             mState = MOVE_TO_BLOCK_2;
             break;
 
@@ -104,7 +104,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_3:
-            init(SelectMoveToBlockpara[BlockCount]);
+            init(MoveToBlockpara);
             mState = MOVE_TO_BLOCK_3;
             break;
 
