@@ -57,23 +57,23 @@ class BlockDeTreasure : public SectionManager {
         int WinnerColor;
         int BlockCount = 0;
         int NotJudgeBlockFlag = 0;
-        /*??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½
-            LENGTH,{??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½}
-            TIME,{??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½}
-            COLOR,{??¿½?¿½F,??¿½?¿½Ê“x}
-            BLOCKCOLOR,{??¿½?¿½Ôƒu??¿½?¿½??¿½?¿½??¿½?¿½b??¿½?¿½N,??¿½?¿½Âƒu??¿½?¿½??¿½?¿½??¿½?¿½b??¿½?¿½N,??¿½?¿½Ê“x,??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½}
-            TURNANGLE,{??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½p??¿½?¿½x}  //??¿½?¿½??¿½?¿½??¿½?¿½s??¿½?¿½Ì‚ï¿½??¿½?¿½??¿½?¿½?¿½??¿½?¿½l??¿½?¿½Í‰E??¿½?¿½??¿½?¿½]??¿½?¿½??¿½?¿½??¿½?¿½}??¿½?¿½C??¿½?¿½i??¿½?¿½X??¿½?¿½A??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½]??¿½?¿½Íƒv??¿½?¿½??¿½?¿½??¿½?¿½X//
-            ARMANGLE,{??¿½?¿½A??¿½?¿½[??¿½?¿½??¿½?¿½??¿½?¿½p??¿½?¿½x}
-            TEELANGLE,{??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½Û‚Ì–Ú•W??¿½?¿½p??¿½?¿½x}
+        /*??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½
+            LENGTH,{??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½}
+            TIME,{??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½}
+            COLOR,{??ï¿½ï¿½?ï¿½ï¿½F,??ï¿½ï¿½?ï¿½ï¿½Ê“x}
+            BLOCKCOLOR,{??ï¿½ï¿½?ï¿½ï¿½Ôƒu??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½b??ï¿½ï¿½?ï¿½ï¿½N,??ï¿½ï¿½?ï¿½ï¿½Âƒu??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½b??ï¿½ï¿½?ï¿½ï¿½N,??ï¿½ï¿½?ï¿½ï¿½Ê“x,??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½}
+            TURNANGLE,{??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½p??ï¿½ï¿½?ï¿½ï¿½x}  //??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½s??ï¿½ï¿½?ï¿½ï¿½Ì‚ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½l??ï¿½ï¿½?ï¿½ï¿½Í‰E??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½]??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½}??ï¿½ï¿½?ï¿½ï¿½C??ï¿½ï¿½?ï¿½ï¿½i??ï¿½ï¿½?ï¿½ï¿½X??ï¿½ï¿½?ï¿½ï¿½A??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½]??ï¿½ï¿½?ï¿½ï¿½Íƒv??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½X//
+            ARMANGLE,{??ï¿½ï¿½?ï¿½ï¿½A??ï¿½ï¿½?ï¿½ï¿½[??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½p??ï¿½ï¿½?ï¿½ï¿½x}
+            TEELANGLE,{??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½Û‚Ì–Ú•W??ï¿½ï¿½?ï¿½ï¿½p??ï¿½ï¿½?ï¿½ï¿½x}
             ENDJ,
             NONE
             */
 
-           /*??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½
-            WALKER,{??¿½?¿½O??¿½?¿½i??¿½?¿½Ìƒp??¿½?¿½??¿½?¿½??¿½?¿½[,??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½Ìƒp??¿½?¿½??¿½?¿½??¿½?¿½[}  //??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½Ìƒp??¿½?¿½??¿½?¿½??¿½?¿½[??¿½?¿½Í‰E??¿½?¿½??¿½?¿½]??¿½?¿½??¿½?¿½??¿½?¿½v??¿½?¿½??¿½?¿½??¿½?¿½X??¿½?¿½A??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½]??¿½?¿½Íƒ}??¿½?¿½C??¿½?¿½i??¿½?¿½X//
-            TRACER,{??¿½?¿½??¿½?¿½??¿½?¿½x,??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½,P,I,D,??¿½?¿½p??¿½?¿½x??¿½?¿½Ú•W??¿½?¿½l,??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½P}
-            ARM,{??¿½?¿½Ú•W??¿½?¿½ÌƒA??¿½?¿½[??¿½?¿½??¿½?¿½??¿½?¿½ÌŠp??¿½?¿½x}
-            TEEL,{??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½??¿½?¿½Û‚ï¿½???¿½?¿½??¿½?¿½[??¿½?¿½^??¿½?¿½[??¿½?¿½Ì‹ï¿½??¿½?¿½??¿½?¿½}
+           /*??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½
+            WALKER,{??ï¿½ï¿½?ï¿½ï¿½O??ï¿½ï¿½?ï¿½ï¿½i??ï¿½ï¿½?ï¿½ï¿½Ìƒp??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½[,??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½Ìƒp??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½[}  //??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½Ìƒp??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½[??ï¿½ï¿½?ï¿½ï¿½Í‰E??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½]??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½v??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½X??ï¿½ï¿½?ï¿½ï¿½A??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½]??ï¿½ï¿½?ï¿½ï¿½Íƒ}??ï¿½ï¿½?ï¿½ï¿½C??ï¿½ï¿½?ï¿½ï¿½i??ï¿½ï¿½?ï¿½ï¿½X//
+            TRACER,{??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½x,??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½,P,I,D,??ï¿½ï¿½?ï¿½ï¿½p??ï¿½ï¿½?ï¿½ï¿½x??ï¿½ï¿½?ï¿½ï¿½Ú•W??ï¿½ï¿½?ï¿½ï¿½l,??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½P}
+            ARM,{??ï¿½ï¿½?ï¿½ï¿½Ú•W??ï¿½ï¿½?ï¿½ï¿½ÌƒA??ï¿½ï¿½?ï¿½ï¿½[??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½ÌŠp??ï¿½ï¿½?ï¿½ï¿½x}
+            TEEL,{??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½Û‚ï¿½???ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½[??ï¿½ï¿½?ï¿½ï¿½^??ï¿½ï¿½?ï¿½ï¿½[??ï¿½ï¿½?ï¿½ï¿½Ì‹ï¿½??ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½?ï¿½ï¿½}
             VIRTUALCURVE,{åŠï¿½?,é€Ÿåº¦,P,I,D}
             END
             */
@@ -85,7 +85,7 @@ class BlockDeTreasure : public SectionManager {
             {Section::ARM,{55},Section::BLOCKCOLOR,{13,200,0.5,400},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
 
-            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//??¿½?¿½~??¿½?¿½Ü‚ï¿½
+            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//??ï¿½ï¿½?ï¿½ï¿½~??ï¿½ï¿½?ï¿½ï¿½Ü‚ï¿½
 
             {Section::END,{},Section::ENDJ,{}},
         };*/
@@ -100,7 +100,7 @@ class BlockDeTreasure : public SectionManager {
             {Section::TURNWALKER,{-30,40,5,3},Section::TURNANGLE,{68},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{2},Section::NONE,{}},
              /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{-70},Section::TEELANGLE,{-4300},Section::NONE,{}},//?¿½?¿½?¿½?¿½?¿½Û‚Ì‚ï¿½?¿½å‚¤?¿½Ç—Ç‚ï¿½?¿½p?¿½x?¿½?¿½?¿½?¿½?¿½?¿½
+            {Section::TEEL,{-70},Section::TEELANGLE,{-4300},Section::NONE,{}},//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Û‚Ì‚ï¿½?ï¿½ï¿½å‚¤?ï¿½ï¿½Ç—Ç‚ï¿½?ï¿½ï¿½p?ï¿½ï¿½x?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
 
             //{Section::WALKER,{40, 0},Section::LENGTH,{55},Section::NONE,{}},
@@ -108,7 +108,7 @@ class BlockDeTreasure : public SectionManager {
             //{Section::WALKER,{20, 0},Section::LENGTH,{16},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{70},Section::TEELANGLE,{4200},Section::NONE,{}},//?¿½?¿½?¿½?¿½?¿½Û‚Ì‚ï¿½?¿½å‚¤?¿½Ç—Ç‚ï¿½?¿½p?¿½x?¿½?¿½?¿½?¿½?¿½?¿½
+            {Section::TEEL,{70},Section::TEELANGLE,{4200},Section::NONE,{}},//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Û‚Ì‚ï¿½?ï¿½ï¿½å‚¤?ï¿½ï¿½Ç—Ç‚ï¿½?ï¿½ï¿½p?ï¿½ï¿½x?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
 
@@ -122,19 +122,19 @@ class BlockDeTreasure : public SectionManager {
             
             {Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
             {Section::WALKER,{-10, 0},Section::LENGTH,{-4},Section::NONE,{}},
-            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},//é?
+            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},//ï¿½?
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{-9,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-10,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
             {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//èµ¤
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
-            {Section::VIRTUALSTRAIGHT,{-9,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-9.3,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
             {Section::TRACER,{15, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{9},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{30},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{67},Section::TIME,{5},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{-5,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-6,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},
 
             
             
@@ -145,12 +145,13 @@ class BlockDeTreasure : public SectionManager {
         };
 
         SecParam MoveToBlockpara2[100] = {
-            {Section::VIRTUALSTRAIGHT,{-40,12,22,5,2},Section::LENGTH,{10},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-40,12,22,5,2},Section::LENGTH,{11},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{10},Section::NONE,{}},
             {Section::TURNWALKER,{30,40,5,3},Section::TURNANGLE,{-38},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{80},Section::NONE,{}},
             {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//èµ¤
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{-9,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-4,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
             {Section::TRACER,{15, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{9},Section::NONE,{}},
@@ -158,13 +159,6 @@ class BlockDeTreasure : public SectionManager {
             {Section::DEFOLTARMCHANGE,{67},Section::TIME,{5},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{-5,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},
 
-
-            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//?¿½?¿½?¿½?¿½?¿½Û‚Ì‚ï¿½?¿½å‚¤?¿½Ç—Ç‚ï¿½?¿½p?¿½x?¿½?¿½?¿½?¿½?¿½?¿½
-            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//?¿½?¿½?¿½?¿½?¿½Ü‚ï¿½
-            {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},
 
             {Section::END,{},Section::ENDJ,{}},
         };
@@ -188,9 +182,9 @@ class BlockDeTreasure : public SectionManager {
 
         SecParam GetoutBlockpara[100] = {
             
-            {Section::WALKER,{-15, 0},Section::LENGTH,{-7},Section::NONE,{}},//å¾Œé€²
+            {Section::WALKER,{-15, 0},Section::LENGTH,{-8},Section::NONE,{}},//å¾Œé€²
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{-40,18,22,5,2},Section::LENGTH,{24},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-46,18,22,5,2},Section::LENGTH,{25},Section::NONE,{}},
             {Section::TURNWALKER,{80,40,5,3},Section::TURNANGLE,{-105},Section::NONE,{}},
             //{Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
             //{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
@@ -204,6 +198,24 @@ class BlockDeTreasure : public SectionManager {
         };
 
         SecParam GetoutBlockLeftpara[100] = {
+
+            {Section::WALKER,{-15, 0},Section::LENGTH,{-7},Section::NONE,{}},//å¾Œé€²
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{40,18,22,5,2},Section::LENGTH,{21},Section::NONE,{}},
+            {Section::TURNWALKER,{-80,40,5,3},Section::TURNANGLE,{105},Section::NONE,{}},
+            
+            {Section::TURNWALKER,{80,40,5,3},Section::TURNANGLE,{-54},Section::NONE,{}},
+            {Section::WALKER,{-13, 0},Section::LENGTH,{-9},Section::NONE,{}},//å¾Œé€²
+            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{23},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+
+
+            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
+            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Û‚Ì‚ï¿½?ï¿½ï¿½å‚¤?ï¿½ï¿½Ç—Ç‚ï¿½?ï¿½ï¿½p?ï¿½ï¿½x?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ü‚ï¿½
+            {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
 
@@ -214,10 +226,10 @@ class BlockDeTreasure : public SectionManager {
 
             {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//?¿½?¿½?¿½?¿½?¿½Û‚Ì‚ï¿½?¿½å‚¤?¿½Ç—Ç‚ï¿½?¿½p?¿½x?¿½?¿½?¿½?¿½?¿½?¿½
+            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Û‚Ì‚ï¿½?ï¿½ï¿½å‚¤?ï¿½ï¿½Ç—Ç‚ï¿½?ï¿½ï¿½p?ï¿½ï¿½x?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//?¿½?¿½?¿½?¿½?¿½Ü‚ï¿½
-            {Section::WALKER,{0, 0},Section::LENGTH,{500},Section::NONE,{}},//{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//æ­¢ã¾?¿½?
+            {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ü‚ï¿½
+            {Section::WALKER,{0, 0},Section::LENGTH,{500},Section::NONE,{}},//{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//æ­¢ã¾?ï¿½ï¿½?
             
             {Section::WALKER,{0, 0},Section::LENGTH,{200},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
