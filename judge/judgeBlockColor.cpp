@@ -3,6 +3,7 @@
 
 #include "Section.h"
 #include "ev3api.h"
+#include "util.h"
 
 JudgeBlockColor::JudgeBlockColor()
 {
@@ -65,10 +66,13 @@ bool JudgeBlockColor::calcjudge()
     //mSatu->getValue()//とってくる彩度
     //printf("JudgeBlockColor::calcjudgeOK");
     //赤の判定開始
+    static char str[256];
+
+    sprintf(str,"RED H  %f",mHue->getValue());
+    msg_f(str,4);
     double Redvalue;
     Redvalue = mHue->getValue() - mHueRedkids;  //希望の色の範囲の中央値 ー とってくる色の値
-    //printf("RED H  %f\n",mHue->getValue());
-
+    
     Redvalue = fabs(Redvalue);
 
     if(Redvalue >= 180)
@@ -86,6 +90,9 @@ bool JudgeBlockColor::calcjudge()
             //printf("RedBlockCount%f\n",RedBlockCount);
         }
     }
+
+    sprintf(str,"RedBlockCount:%f",RedBlockCount);
+    msg_f(str,5);
 
     //青の判定開始
     double Bluevalue;
@@ -108,6 +115,10 @@ bool JudgeBlockColor::calcjudge()
             //printf("BlueBlockCount%f\n",BlueBlockCount);
         }
     }
+
+    sprintf(str,"BlueBlockCount:%f",BlueBlockCount);
+            
+    msg_f(str,6);
 
     //printf("mTimekids%f\n",mTimekids);
     //printf("countTime%f\n",countTime);

@@ -58,7 +58,6 @@ bool BlockDeTreasure::runBlock()
         {
             WinnerColor = mSection[mSectionIdx]->returnValue();
             printf("WinnerColor%d\n",WinnerColor);
-            BlockCount++;
         }
         mSectionIdx++;
 
@@ -85,10 +84,9 @@ bool BlockDeTreasure::run()
         case INTO_BLOCK_DE_TREASURE:
             //printf("INTO_BLOCK_DE_TREASURE");
             IntoBlockDeTreasure();
-            
             break;
         case INIT_MOVE_TO_BLOCK:
-            init(MoveToBlockpara);
+            init(SelectMoveToBlockpara[BlockCount]);
             mState = MOVE_TO_BLOCK;
             break;
 
@@ -97,7 +95,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_2:
-            init(MoveToBlockpara2);
+            init(SelectMoveToBlockpara[BlockCount]);
             mState = MOVE_TO_BLOCK_2;
             break;
 
@@ -106,7 +104,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_3:
-            init(MoveToBlockpara3);
+            init(SelectMoveToBlockpara[BlockCount]);
             mState = MOVE_TO_BLOCK_3;
             break;
 
@@ -119,25 +117,32 @@ bool BlockDeTreasure::run()
             init(JudgeingColorpara);
             mState = JUDGEING_COLOR;
             break;
-
         case JUDGEING_COLOR:
             JudgeingColor();
-            
             break;
         case INIT_GETOUT_BLOCK:
             init(GetoutBlockpara);
+            BlockCount++;
             mState = GETOUT_BLOCK;
             break;
         case GETOUT_BLOCK:
             GetoutBlock();
             break;
+        case INIT_GETOUT_BLOCK_LEFT:
+            init(GetoutBlockLeftpara);
+            BlockCount++;
+            mState = GETOUT_BLOCK_LEFT;
+            break;
+        case GETOUT_BLOCK_LEFT:
+            GetoutBlockLeft();
+            break;
         case INIT_GETTING_BLOCK:
             init(GettingBlockpara);
+            BlockCount++;
             mState = GETTING_BLOCK;
             break;
         case GETTING_BLOCK:
             GettingBlock();
-            
             break;
         case INIT_MOVE_TO_GOAL:
             init(MoveToGoalpara);
@@ -169,36 +174,73 @@ bool BlockDeTreasure::IntoBlockDeTreasure()
 
 bool BlockDeTreasure::MoveToBlock()
 {
-    if(SectionManager::run()){
-        mState = INIT_JUDGEING_COLOR;
+    if(NotJudgeBlockFlag == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_GETOUT_BLOCK;
+        }
+    }
+    else
+    {
+        if(SectionManager::run()){
+            mState = INIT_JUDGEING_COLOR;
+        }
     }
 }
 
 bool BlockDeTreasure::MoveToBlock2()
 {
-    if(SectionManager::run()){
-        mState = INIT_JUDGEING_COLOR;
+    if(NotJudgeBlockFlag == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_GETOUT_BLOCK;
+        }
+    }
+    else
+    {
+        if(SectionManager::run()){
+            mState = INIT_JUDGEING_COLOR;
+        }
     }
 }
 
 bool BlockDeTreasure::MoveToBlock3()
 {
-    if(SectionManager::run()){
-        mState = INIT_JUDGEING_COLOR;
+   if(NotJudgeBlockFlag == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_GETOUT_BLOCK;
+        }
+    }
+    else
+    {
+        if(SectionManager::run()){
+            mState = INIT_JUDGEING_COLOR;
+        }
     }
 }
 
 bool BlockDeTreasure::JudgeingColor()
 {
-    
     if(runBlock()){
-        if(WinnerColor = 1)
+
+        if(WinnerColor == 1)
         {
             mState = INIT_GETTING_BLOCK;
+
+            NotJudgeBlockFlag = 1;
         }
         else
         {
-            mState = INIT_GETOUT_BLOCK;
+            if(BlockCount == 0)
+            {
+                mState = INIT_GETOUT_BLOCK;
+            }
+
+            if(BlockCount == 1)
+            {
+                mState = INIT_GETOUT_BLOCK_LEFT;
+            }
         }
 
     }
@@ -206,6 +248,7 @@ bool BlockDeTreasure::JudgeingColor()
 
 bool BlockDeTreasure::GetoutBlock()
 {
+
     if(BlockCount == 1)
     {
         if(SectionManager::run()){
@@ -227,6 +270,32 @@ bool BlockDeTreasure::GetoutBlock()
         }
     }
 }
+
+bool BlockDeTreasure::GetoutBlockLeft()
+{
+
+    if(BlockCount == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_2;
+        }
+    }
+
+    if(BlockCount == 2)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_3;
+        }
+    }
+
+    if(BlockCount == 3)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_GOAL;
+        }
+    }
+}
+
 
 
 bool BlockDeTreasure::GettingBlock()

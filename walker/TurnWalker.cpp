@@ -13,14 +13,13 @@ void TurnWalker::run()
 {
     mlen = mLength->getValue();
 
-    calclen = mlen - slen;//ç¾åœ¨ä½ç½®ï¼æ—‹å›žèµ°è¡Œé–‹å§‹ä½ç½®
+    calclen = mlen - slen;//Œ»ÝˆÊ’u|ù‰ñŠJŽnˆÊ’u
 
     mTurn = calcTurn(calclen);
 
-    setCommand((int)mTurn, (int)mangle);
+    setCommand((int)mTurn, (int)mangle);//setCommnad(getOperation‚Ì•Ô‚è’l,ƒpƒ‰ƒ[ƒ^[‚©‚çŽó‚¯Žæ‚Á‚½’l)
 
     SimpleWalker::run();
-
 }
 
 void TurnWalker::init()
@@ -31,15 +30,17 @@ void TurnWalker::init()
 double TurnWalker::calcTurn(double val1) 
 {
     double val1_turn;
-    val1_turn =  mPid->getOperation(val1);
+    val1_turn = mPid->getOperation(val1);
 
-  //  mPid->debug=true;
+    //mPid->debug=true;
 
     //if(val1 > 0) 
-    val1_turn = -val1_turn;
+    //val1_turn = -val1_turn;
     //setBias(-mForward*(1-mCurve)/(1+mCurve)*mAngleKp);
-    setBias(mCurve);
-    double turn =  val1_turn+mBias;
+
+    //setBias(mCurve);
+
+    double turn = val1_turn + mBias;
    
     return turn;
 }
@@ -48,6 +49,9 @@ void TurnWalker::setpara(double para3[])
 {
     mangle = para3[0];
 
+    mp = para3[1];
+    mi = para3[2];
+    md = para3[3];
 
     mPid->setTarget(0);
     mPid->setKp(mp); 
