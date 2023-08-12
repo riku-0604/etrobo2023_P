@@ -6,19 +6,13 @@ class BlockDeTreasure : public SectionManager {
     public:
         BlockDeTreasure();
         bool IntoBlockDeTreasure();
-
         bool MoveToBlock();
-        bool MoveToBlock2();
-        bool MoveToBlock3();
-
         bool GetoutBlock();
-        bool GetoutBlockLeft();
-
         bool JudgeingColor();
-
         bool GettingBlock();
         bool MoveToGoal();
-        
+        bool MoveToBlock2();
+        bool MoveToBlock3();
 
         bool run();
 
@@ -27,8 +21,6 @@ class BlockDeTreasure : public SectionManager {
         enum State {
             INIT_INTO_BLOCK_DE_TREASURE,
             INTO_BLOCK_DE_TREASURE,
-
-
 
             INIT_MOVE_TO_BLOCK,
             MOVE_TO_BLOCK,
@@ -39,30 +31,17 @@ class BlockDeTreasure : public SectionManager {
             INIT_MOVE_TO_BLOCK_3,
             MOVE_TO_BLOCK_3,
 
-
-
             INIT_GETOUT_BLOCK,
             GETOUT_BLOCK,
-
-            INIT_GETOUT_BLOCK_LEFT,
-            GETOUT_BLOCK_LEFT,
-
-
 
             INIT_JUDGEING_COLOR,
             JUDGEING_COLOR,
 
-
-
             INIT_GETTING_BLOCK,
             GETTING_BLOCK,
 
-
-
             INIT_MOVE_TO_GOAL,
             MOVE_TO_GOAL,
-
-
             END,
         };
 
@@ -73,25 +52,24 @@ class BlockDeTreasure : public SectionManager {
 
         int WinnerColor;
         int BlockCount = 0;
-        int NotJudgeBlockFlag = 0;
-        /*?øΩ?øΩ?øΩ?øΩ
-            LENGTH,{?øΩ?øΩ?øΩ?øΩ}
-            TIME,{?øΩ?øΩ?øΩ?øΩ}
-            COLOR,{?øΩF,?øΩ ìx}
-            BLOCKCOLOR,{?øΩ‘Éu?øΩ?øΩ?øΩb?øΩN,?øΩ¬Éu?øΩ?øΩ?øΩb?øΩN,?øΩ ìx,?øΩ?øΩ?øΩ?øΩ}
-            TURNANGLE,{?øΩ?øΩ?øΩ?øΩp?øΩx}  //?øΩ?øΩ?øΩs?øΩÃÇÔøΩ?øΩ?ØéÔøΩ?øΩl?øΩÕâE?øΩ?øΩ]?øΩ?øΩ?øΩ}?øΩC?øΩi?øΩX?øΩA?øΩ?øΩ?øΩ?øΩ]?øΩÕÉv?øΩ?øΩ?øΩX//
-            ARMANGLE,{?øΩA?øΩ[?øΩ?øΩ?øΩp?øΩx}
-            TEELANGLE,{?øΩ?øΩ?øΩ?øΩ?øΩ€ÇÃñ⁄ïW?øΩp?øΩx}
+        /*?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ
+            LENGTH,{?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ}
+            TIME,{?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ}
+            COLOR,{?ÔøΩÔøΩF,?ÔøΩÔøΩ ìx}
+            BLOCKCOLOR,{?ÔøΩÔøΩ‘Éu?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩb?ÔøΩÔøΩN,?ÔøΩÔøΩ¬Éu?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩb?ÔøΩÔøΩN,?ÔøΩÔøΩ ìx,?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ}
+            TURNANGLE,{?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩp?ÔøΩÔøΩx}  //?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩs?ÔøΩÔøΩÃÇÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÔøΩ?ÔøΩÔøΩl?ÔøΩÔøΩÕâE?ÔøΩÔøΩ?ÔøΩÔøΩ]?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ}?ÔøΩÔøΩC?ÔøΩÔøΩi?ÔøΩÔøΩX?ÔøΩÔøΩA?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ]?ÔøΩÔøΩÕÉv?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩX//
+            ARMANGLE,{?ÔøΩÔøΩA?ÔøΩÔøΩ[?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩp?ÔøΩÔøΩx}
+            TEELANGLE,{?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ€ÇÃñ⁄ïW?ÔøΩÔøΩp?ÔøΩÔøΩx}
             ENDJ,
             NONE
             */
 
-           /*?øΩ?øΩ?øΩ?øΩ
-            WALKER,{?øΩO?øΩi?øΩÃÉp?øΩ?øΩ?øΩ[,?øΩ?øΩ?øΩ?øΩÃÉp?øΩ?øΩ?øΩ[}  //?øΩ?øΩ?øΩ?øΩÃÉp?øΩ?øΩ?øΩ[?øΩÕâE?øΩ?øΩ]?øΩ?øΩ?øΩv?øΩ?øΩ?øΩX?øΩA?øΩ?øΩ?øΩ?øΩ]?øΩÕÉ}?øΩC?øΩi?øΩX//
-            TRACER,{?øΩ?øΩ?øΩx,?øΩ?øΩ?øΩ?øΩ,P,I,D,?øΩp?øΩx?øΩ⁄ïW?øΩl,?øΩ?øΩ?øΩ?øΩ?øΩP}
-            ARM,{?øΩ⁄ïW?øΩÃÉA?øΩ[?øΩ?øΩ?øΩÃäp?øΩx}
-            TEEL,{?øΩ?øΩ?øΩ?øΩ?øΩ€ÇÃ??øΩ?øΩ[?øΩ^?øΩ[?øΩÃãÔøΩ?øΩ?øΩ}
-            VIRTUALCURVE,{ÂçäÂæ?,ÈÄüÂ∫¶,P,I,D}
+           /*?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ
+            WALKER,{?ÔøΩÔøΩO?ÔøΩÔøΩi?ÔøΩÔøΩÃÉp?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ[,?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃÉp?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ[}  //?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃÉp?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ[?ÔøΩÔøΩÕâE?ÔøΩÔøΩ?ÔøΩÔøΩ]?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩv?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩX?ÔøΩÔøΩA?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ]?ÔøΩÔøΩÕÉ}?ÔøΩÔøΩC?ÔøΩÔøΩi?ÔøΩÔøΩX//
+            TRACER,{?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩx,?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ,P,I,D,?ÔøΩÔøΩp?ÔøΩÔøΩx?ÔøΩÔøΩ⁄ïW?ÔøΩÔøΩl,?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩP}
+            ARM,{?ÔøΩÔøΩ⁄ïW?ÔøΩÔøΩÃÉA?ÔøΩÔøΩ[?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩÃäp?ÔøΩÔøΩx}
+            TEEL,{?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ€ÇÔøΩ??ÔøΩÔøΩ?ÔøΩÔøΩ[?ÔøΩÔøΩ^?ÔøΩÔøΩ[?ÔøΩÔøΩÃãÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ}
+            VIRTUALCURVE,{ÂçäÔøΩ?,ÈÄüÂ∫¶,P,I,D}
             END
             */
            
@@ -102,111 +80,143 @@ class BlockDeTreasure : public SectionManager {
             {Section::ARM,{55},Section::BLOCKCOLOR,{13,200,0.5,400},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
 
-            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//?øΩ~?øΩ‹ÇÔøΩ
+            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},//?ÔøΩÔøΩ~?ÔøΩÔøΩ‹ÇÔøΩ
 
             {Section::END,{},Section::ENDJ,{}},
         };*/
         
 
         SecParam IntoBlockDeTreasurepara[100] = {
-
-            {Section::DEFOLTARMCHANGE,{60},Section::TIME,{1},Section::NONE,{}},
-
-
-            /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{70},Section::TEELANGLE,{3000},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
-
-
-            {Section::DEFOLTARMCHANGE,{0},Section::TIME,{1},Section::NONE,{}},
-            /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{-70},Section::TEELANGLE,{-4300},Section::NONE,{}},//ÇµÇ¡Ç€ÇÃÇøÇÂÇ§Ç«ó«Ç¢äpìxè¡Ç∑Ç»
-            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
-
-            //Ç‡Ç∆Ç…ñﬂÇ∑èàóù
-            /*{Section::WALKER,{0, 0},Section::TIME,{500},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
-            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//ÇµÇ¡Ç€ÇÃÇøÇÂÇ§Ç«ó«Ç¢äpìxè¡Ç∑Ç»
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{1},Section::NONE,{}},
+            //{Section::TRACER,{20, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{400},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-77,20,20,5,2},Section::LENGTH,{59.6},Section::NONE,{}},
+            
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{0},Section::TIME,{1},Section::NONE,{}},//Ç±Ç±Ç‹Ç≈*/
+            {Section::TURNWALKER,{-30,40,5,3},Section::TURNANGLE,{68},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{2},Section::NONE,{}},
+             /*{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::TEEL,{-70},Section::TEELANGLE,{-4300},Section::NONE,{}},//ÔøΩÔøΩÔøΩÔøΩÔøΩ€ÇÃÇÔøΩÔøΩÂÇ§ÔøΩ«ó«ÇÔøΩÔøΩpÔøΩxÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},*/
+
+            //{Section::WALKER,{40, 0},Section::LENGTH,{55},Section::NONE,{}},
+            //{Section::WALKER,{0, -20},Section::TURNANGLE,{71},Section::NONE,{}},
+            //{Section::WALKER,{20, 0},Section::LENGTH,{16},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::TEEL,{70},Section::TEELANGLE,{4200},Section::NONE,{}},//ÔøΩÔøΩÔøΩÔøΩÔøΩ€ÇÃÇÔøΩÔøΩÂÇ§ÔøΩ«ó«ÇÔøΩÔøΩpÔøΩxÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
+
+            //{Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
 
             {Section::END,{},Section::ENDJ,{}},
         };
 
-
         SecParam MoveToBlockpara[100] = {
-            {Section::WALKER,{30, 0},Section::LENGTH,{80},Section::NONE,{}},
+
+            
+            {Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
+            {Section::WALKER,{-10, 0},Section::LENGTH,{-4},Section::NONE,{}},
+            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},//Èùí
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-9,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
+            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//Ëµ§
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
+            {Section::VIRTUALSTRAIGHT,{-9,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
+            {Section::TRACER,{15, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{9},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{30},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{67},Section::TIME,{5},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-5,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},
+
+            
+            
+
+
+            
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam MoveToBlockpara2[100] = {
-            {Section::WALKER,{30, 0},Section::LENGTH,{40},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-40,12,22,5,2},Section::LENGTH,{10},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{10},Section::NONE,{}},
+            {Section::TURNWALKER,{30,40,5,3},Section::TURNANGLE,{-38},Section::NONE,{}},
+            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//Ëµ§
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-9,18,22,5,2},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
+            {Section::TRACER,{15, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{9},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{30},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{67},Section::TIME,{5},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-5,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},
+
+
+            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
+            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//ÔøΩÔøΩÔøΩÔøΩÔøΩ€ÇÃÇÔøΩÔøΩÂÇ§ÔøΩ«ó«ÇÔøΩÔøΩpÔøΩxÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//ÔøΩÔøΩÔøΩÔøΩÔøΩ‹ÇÔøΩ
+            {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},
+
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam MoveToBlockpara3[100] = {
-            {Section::WALKER,{-30, 0},Section::LENGTH,{-40},Section::NONE,{}},
+           
+            {Section::WALKER,{0, 20},Section::TURNANGLE,{-55},Section::NONE,{}},
             //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
         
-        SecParam *SelectMoveToBlockpara[3] = {
-            MoveToBlockpara,MoveToBlockpara2,MoveToBlockpara3
-        };
-
-
-
         SecParam JudgeingColorpara[100] = {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::ARM,{50},Section::BLOCKCOLOR,{13,200,0.5,800},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-
-            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//Ê≠¢„Åæ„Ç?
+            {Section::DEFOLTARMCHANGE,{67},Section::BLOCKCOLOR,{15,200,0.5,300},Section::NONE,{}},
+            
+            
+            
+            
             {Section::END,{},Section::ENDJ,{}},
         };
-
-
-
 
         SecParam GetoutBlockpara[100] = {
-            /*{Section::WALKER,{-15, 0},Section::LENGTH,{-10},Section::NONE,{}},
-            {Section::WALKER,{0, 20},Section::TURNANGLE,{-45},Section::NONE,{}},
-            {Section::WALKER,{15, 0},Section::LENGTH,{30},Section::NONE,{}},
-            {Section::WALKER,{0, 20},Section::TURNANGLE,{-55},Section::NONE,{}},*/
-
-            {Section::WALKER,{0, -30},Section::TURNANGLE,{45},Section::NONE,{}},
+            
+            {Section::WALKER,{-15, 0},Section::LENGTH,{-7},Section::NONE,{}},//ÂæåÈÄ≤
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-40,18,22,5,2},Section::LENGTH,{24},Section::NONE,{}},
+            {Section::TURNWALKER,{80,40,5,3},Section::TURNANGLE,{-105},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::TURNWALKER,{-80,40,5,3},Section::TURNANGLE,{54},Section::NONE,{}},
+            {Section::WALKER,{-13, 0},Section::LENGTH,{-9},Section::NONE,{}},//ÂæåÈÄ≤
+            {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{23},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+            
             {Section::END,{},Section::ENDJ,{}},
         };
-
-        SecParam GetoutBlockLeftpara[100] = {
-            {Section::WALKER,{0, -30},Section::TURNANGLE,{45},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::END,{},Section::ENDJ,{}},
-        };
-
-
-
 
         SecParam GettingBlockpara[100] = {
-           /*{Section::WALKER,{40, 0},Section::LENGTH,{20},Section::NONE,{}},
-            {Section::WALKER,{0, 20},Section::TURNANGLE,{-90},Section::NONE,{}},
+            {Section::WALKER,{40, 0},Section::LENGTH,{40},Section::NONE,{}},
+            /*{Section::WALKER,{0, 20},Section::TURNANGLE,{-90},Section::NONE,{}},
             {Section::WALKER,{20, 0},Section::LENGTH,{50},Section::NONE,{}},*/
 
-            {Section::WALKER,{0, 30},Section::TURNANGLE,{-45},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
+            {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//ÔøΩÔøΩÔøΩÔøΩÔøΩ€ÇÃÇÔøΩÔøΩÂÇ§ÔøΩ«ó«ÇÔøΩÔøΩpÔøΩxÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//ÔøΩÔøΩÔøΩÔøΩÔøΩ‹ÇÔøΩ
+            {Section::WALKER,{0, 0},Section::LENGTH,{500},Section::NONE,{}},//{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//Ê≠¢„ÅæÔøΩ?
+            
+            {Section::WALKER,{0, 0},Section::LENGTH,{200},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
 
-
-
-
-
         SecParam MoveToGoalpara[100] = {
-            
-            {Section::WALKER,{0,40},Section::TURNANGLE,{90},Section::NONE,{}},
+           
+
             {Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
