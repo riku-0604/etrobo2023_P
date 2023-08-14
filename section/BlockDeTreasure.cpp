@@ -6,7 +6,7 @@
 BlockDeTreasure::BlockDeTreasure():
     mState(INIT_INTO_BLOCK_DE_TREASURE)
 {
-    // test—p‰Šú??
+    // testï¿½pï¿½ï¿½ï¿½ï¿½??
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;
 #else
@@ -22,7 +22,7 @@ BlockDeTreasure::BlockDeTreasure():
     selectjudge->setpara(para);
 
 
-    // LineTracer ??ƒX??
+    // LineTracer ??ï¿½X??
     LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
     double para2[]={28, -0.25,  30, 70, 6.2525,0,0,_EDGE};
     tracer->setpara(para2);
@@ -30,7 +30,7 @@ BlockDeTreasure::BlockDeTreasure():
     
     Section *sc1 = new Section();
     
-    // SimpleWalker??ƒX??
+    // SimpleWalker??ï¿½X??
     SimpleWalker* walker = (SimpleWalker*)sc1->selectWalker(Section::WALKER);
     double para3[] = {0,0};
     walker->setpara(para3);
@@ -104,7 +104,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_3:
-            init(MoveToBlockpara);
+            init(MoveToBlockpara3);
             mState = MOVE_TO_BLOCK_3;
             break;
 

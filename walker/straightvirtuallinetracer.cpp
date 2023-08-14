@@ -48,6 +48,7 @@ void straightvirtuallinetracer::init()
 
     mangle = mTurnAngle->getValue();
 
+    mPid->resetParam();
     //printf("mangle  %f\n",mangle);
     //printf("lineangle  %f\n",lineangle);
     targetpoint(mx,my,lineangle + mangle);
@@ -74,11 +75,12 @@ double straightvirtuallinetracer::calcTurn(double val1)
 void straightvirtuallinetracer::setpara(double para3[])
 {
 
-    lineangle = para3[0];//描きたい直線�?�角度
+    lineangle = para3[0];//描きたい直線�?�角度
     mspeed = para3[1];//速度
     mp = para3[2];//P
     mi = para3[3];//I
     md = para3[4];//D
+
 
 
     mangle = mTurnAngle->getValue();//旋回角度
