@@ -104,7 +104,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_3:
-            init(MoveToBlockpara);
+            init(MoveToBlockpara3);
             mState = MOVE_TO_BLOCK_3;
             break;
 

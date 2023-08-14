@@ -5,15 +5,16 @@
 class BlockDeTreasure : public SectionManager {
     public:
         BlockDeTreasure();
-        bool IntoBlockDeTreasure();
-        bool MoveToBlock();
-        bool GetoutBlock();
-        bool GetoutBlockLeft();
-        bool JudgeingColor();
-        bool GettingBlock();
-        bool MoveToGoal();
+        bool IntoBlockDeTreasure();//ブロックエリアに入る
+        bool MoveToBlock();//ブロックまで移動する
         bool MoveToBlock2();
         bool MoveToBlock3();
+        bool GetoutBlock();//ブロックを追い出す
+        bool GetoutBlockLeft();
+        bool JudgeingColor();//ブロックの色を判定する
+        bool GettingBlock();//ブロックを取得する
+        bool MoveToGoal();//ゴールまで移動する
+        
 
         bool run();
 
@@ -92,7 +93,8 @@ class BlockDeTreasure : public SectionManager {
         
 
         SecParam IntoBlockDeTreasurepara[100] = {
-            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{1},Section::NONE,{}},
+            {Section::WALKER,{10, 0},Section::LENGTH,{20},Section::NONE,{}},
+            /*{Section::DEFOLTARMCHANGE,{-15},Section::TIME,{1},Section::NONE,{}},
             //{Section::TRACER,{20, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{400},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{-77,20,20,5,2},Section::LENGTH,{59.6},Section::NONE,{}},
             
@@ -106,21 +108,21 @@ class BlockDeTreasure : public SectionManager {
             //{Section::WALKER,{40, 0},Section::LENGTH,{55},Section::NONE,{}},
             //{Section::WALKER,{0, -20},Section::TURNANGLE,{71},Section::NONE,{}},
             //{Section::WALKER,{20, 0},Section::LENGTH,{16},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
+            /*{Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::TEEL,{70},Section::TEELANGLE,{4200},Section::NONE,{}},//?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽﾛのゑｿｽ?ｿｽ蛯､?ｿｽﾇ良ゑｿｽ?ｿｽp?ｿｽx?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽ
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{5},Section::NONE,{}},
 
-            //{Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
+            //{Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},*/
 
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam MoveToBlockpara[100] = {
 
-            
-            {Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
+            {Section::WALKER,{10, 0},Section::LENGTH,{20},Section::NONE,{}},
+            /*{Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
             {Section::WALKER,{-10, 0},Section::LENGTH,{-4},Section::NONE,{}},
             {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},//髱?
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
@@ -134,7 +136,7 @@ class BlockDeTreasure : public SectionManager {
             {Section::TRACER,{15, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{9},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{30},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{67},Section::TIME,{5},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{-5,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-5,12,22,5,2},Section::LENGTH,{9},Section::NONE,{}},*/
 
             
             
@@ -145,7 +147,8 @@ class BlockDeTreasure : public SectionManager {
         };
 
         SecParam MoveToBlockpara2[100] = {
-            {Section::VIRTUALSTRAIGHT,{-40,12,22,5,2},Section::LENGTH,{10},Section::NONE,{}},
+            {Section::WALKER,{-10, 0},Section::LENGTH,{-20},Section::NONE,{}},
+            /*{Section::VIRTUALSTRAIGHT,{-40,12,22,5,2},Section::LENGTH,{10},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{10},Section::NONE,{}},
             {Section::TURNWALKER,{30,40,5,3},Section::TURNANGLE,{-38},Section::NONE,{}},
             {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//襍､
@@ -164,31 +167,30 @@ class BlockDeTreasure : public SectionManager {
             {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽﾛのゑｿｽ?ｿｽ蛯､?ｿｽﾇ良ゑｿｽ?ｿｽp?ｿｽx?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽ
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽﾜゑｿｽ
-            {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::LENGTH,{2000},Section::NONE,{}},*/
 
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam MoveToBlockpara3[100] = {
            
-            {Section::WALKER,{0, 20},Section::TURNANGLE,{-55},Section::NONE,{}},
+            {Section::WALKER,{20, 20},Section::LENGTH,{40},Section::NONE,{}},
             //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
         
         SecParam JudgeingColorpara[100] = {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{67},Section::BLOCKCOLOR,{15,200,0.5,300},Section::NONE,{}},
-            
-            
-            
+            {Section::DEFOLTARMCHANGE,{60},Section::BLOCKCOLOR,{15,200,0.5,300},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{0},Section::TIME,{0},Section::NONE,{}},
             
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam GetoutBlockpara[100] = {
+            {Section::TURNWALKER,{30,40,5,3},Section::TURNANGLE,{-45},Section::NONE,{}},
             
-            {Section::WALKER,{-15, 0},Section::LENGTH,{-7},Section::NONE,{}},//蠕碁ｲ
+            /*{Section::WALKER,{-15, 0},Section::LENGTH,{-7},Section::NONE,{}},//蠕碁ｲ
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{-40,18,22,5,2},Section::LENGTH,{24},Section::NONE,{}},
             {Section::TURNWALKER,{80,40,5,3},Section::TURNANGLE,{-105},Section::NONE,{}},
@@ -197,35 +199,39 @@ class BlockDeTreasure : public SectionManager {
             {Section::TURNWALKER,{-80,40,5,3},Section::TURNANGLE,{54},Section::NONE,{}},
             {Section::WALKER,{-13, 0},Section::LENGTH,{-9},Section::NONE,{}},//蠕碁ｲ
             {Section::TRACER,{18, -0.25,  35, 14, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{23},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},*/
             
             
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam GetoutBlockLeftpara[100] = {
+            {Section::TURNWALKER,{30,40,5,3},Section::TURNANGLE,{-45},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam GettingBlockpara[100] = {
-            {Section::WALKER,{40, 0},Section::LENGTH,{40},Section::NONE,{}},
+            {Section::TURNWALKER,{-30,40,5,3},Section::TURNANGLE,{45},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            /*{Section::WALKER,{40, 0},Section::LENGTH,{40},Section::NONE,{}},
             /*{Section::WALKER,{0, 20},Section::TURNANGLE,{-90},Section::NONE,{}},
             {Section::WALKER,{20, 0},Section::LENGTH,{50},Section::NONE,{}},*/
 
-            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
+            /*{Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},
             {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},//?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽﾛのゑｿｽ?ｿｽ蛯､?ｿｽﾇ良ゑｿｽ?ｿｽp?ｿｽx?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽ
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-10},Section::TIME,{1},Section::NONE,{}},//?ｿｽ?ｿｽ?ｿｽ?ｿｽ?ｿｽﾜゑｿｽ
             {Section::WALKER,{0, 0},Section::LENGTH,{500},Section::NONE,{}},//{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//豁｢縺ｾ?ｿｽ?
             
-            {Section::WALKER,{0, 0},Section::LENGTH,{200},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::LENGTH,{200},Section::NONE,{}},*/
+
             {Section::END,{},Section::ENDJ,{}},
         };
 
         SecParam MoveToGoalpara[100] = {
            
-
+            {Section::TURNWALKER,{-30,40,5,3},Section::TURNANGLE,{-45},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
