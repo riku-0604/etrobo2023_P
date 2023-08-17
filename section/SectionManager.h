@@ -30,7 +30,7 @@ class SectionManager {
         
 
     protected:
-        Section *mSection[100];
+        Section *mSection[500];
         int mSectionIdx;
         int mLastIdx;
 
@@ -48,7 +48,7 @@ class SectionManager {
         //{Section::TRACER,{30, -0.25,  0, 0, 0,8,0,LineTracer::LEFTEDGE},Section::LENGTH,{930},Section::NONE,{}},
             //{Section::TRACER,{30, -0.25,  30, 10, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{1090},Section::NONE,{}},
             //{Section::TRACER,{30, -0.25,  30, 10, 6.2525,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{1130},Section::NONE,{}},
-            //{Section::TRACER,{0, 0,  0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{2000},Section::NONE,{}},//スピ�?��?0にな�?
+            //{Section::TRACER,{0, 0,  0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{2000},Section::NONE,{}},//スピ�?��?0にな�?
             //{Section::WALKER,{5, 0},Section::LENGTH,{55},Section::NONE,{}},
             //{Section::TRACER,{50, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{70},Section::NONE,{}},
             //{Section::WALKER,{10, -10},Section::LENGTH,{90},Section::NONE,{}},

@@ -78,6 +78,7 @@ bool BlockDeTreasure::run()
     switch(mState) {
         case INIT_INTO_BLOCK_DE_TREASURE:
             //printf("INIT_INTO_BLOCK_DE_TREASURE");
+            reset();
             init(IntoBlockDeTreasurepara);
             mState = INTO_BLOCK_DE_TREASURE;
             break;
@@ -86,6 +87,7 @@ bool BlockDeTreasure::run()
             IntoBlockDeTreasure();
             break;
         case INIT_MOVE_TO_BLOCK:
+            reset();
             init(MoveToBlockpara);
             mState = MOVE_TO_BLOCK;
             break;
@@ -95,6 +97,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_2:
+            reset();
             init(MoveToBlockpara2);
             mState = MOVE_TO_BLOCK_2;
             break;
@@ -104,6 +107,7 @@ bool BlockDeTreasure::run()
             break;
 
         case INIT_MOVE_TO_BLOCK_3:
+            reset();
             init(MoveToBlockpara3);
             mState = MOVE_TO_BLOCK_3;
             break;
@@ -114,6 +118,7 @@ bool BlockDeTreasure::run()
             break;
         
         case INIT_JUDGEING_COLOR:
+            reset();
             init(JudgeingColorpara);
             mState = JUDGEING_COLOR;
             break;
@@ -121,6 +126,7 @@ bool BlockDeTreasure::run()
             JudgeingColor();
             break;
         case INIT_GETOUT_BLOCK:
+            reset();
             init(GetoutBlockpara);
             BlockCount++;
             mState = GETOUT_BLOCK;
@@ -129,6 +135,7 @@ bool BlockDeTreasure::run()
             GetoutBlock();
             break;
         case INIT_GETOUT_BLOCK_LEFT:
+            reset();
             init(GetoutBlockLeftpara);
             BlockCount++;
             mState = GETOUT_BLOCK_LEFT;
@@ -137,6 +144,7 @@ bool BlockDeTreasure::run()
             GetoutBlockLeft();
             break;
         case INIT_GETTING_BLOCK:
+            reset();
             init(GettingBlockpara);
             BlockCount++;
             mState = GETTING_BLOCK;
@@ -145,6 +153,7 @@ bool BlockDeTreasure::run()
             GettingBlock();
             break;
         case INIT_MOVE_TO_GOAL:
+            reset();
             init(MoveToGoalpara);
             mState = MOVE_TO_GOAL;
             break;
