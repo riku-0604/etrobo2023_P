@@ -12,38 +12,7 @@ BlockDeTreasure::BlockDeTreasure():
 #else
       const int _EDGE = LineTracer::RIGHTEDGE;
 #endif
-
     
-
-    /*Section *sc = new Section();
-    
-    Judge* selectjudge = (Judge*)sc->selectJudge(Section::LENGTH);
-    double para[]={50};
-    selectjudge->setpara(para);
-
-
-    // LineTracer ??ƒX??
-    LineTracer* tracer = (LineTracer*)sc->selectWalker(Section::TRACER);
-    double para2[]={28, -0.25,  30, 70, 6.2525,0,0,_EDGE};
-    tracer->setpara(para2);
-    addSection(sc);
-    
-    Section *sc1 = new Section();
-    
-    // SimpleWalker??ƒX??
-    SimpleWalker* walker = (SimpleWalker*)sc1->selectWalker(Section::WALKER);
-    double para3[] = {0,0};
-    walker->setpara(para3);
-
-    Judge* selectjudge1 = (Judge*)sc1->selectJudge(Section::LENGTH);
-    double para1[]={100};
-
-    selectjudge1->setpara(para1);
-
-    
-    addSection(sc1);*/
-   // printf("roopOK");
-
 }
 
 //spara[i].Treasure_no
@@ -144,6 +113,14 @@ bool BlockDeTreasure::run()
         case GETTING_BLOCK:
             GettingBlock();
             break;
+        case INIT_GETTING_BLOCK_LEFT:
+            init(GettingBlockleftpara);
+            BlockCount++;
+            mState = GETTING_BLOCK_LEFT;
+            break;
+        case GETTING_BLOCK_LEFT:
+            GettingBlockLeft();
+            break;
         case INIT_MOVE_TO_GOAL:
             init(MoveToGoalpara);
             mState = MOVE_TO_GOAL;
@@ -165,7 +142,6 @@ bool BlockDeTreasure::run()
 
 bool BlockDeTreasure::IntoBlockDeTreasure()
 {
-
    if(SectionManager::run()){
         mState = INIT_MOVE_TO_BLOCK;
    }
@@ -177,7 +153,7 @@ bool BlockDeTreasure::MoveToBlock()
     if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-            mState = INIT_GETOUT_BLOCK;
+           SelectGetout();
         }
     }
     else
@@ -193,7 +169,7 @@ bool BlockDeTreasure::MoveToBlock2()
     if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-            mState = INIT_GETOUT_BLOCK;
+            SelectGetout();
         }
     }
     else
@@ -209,7 +185,7 @@ bool BlockDeTreasure::MoveToBlock3()
    if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-            mState = INIT_GETOUT_BLOCK;
+            SelectGetout();
         }
     }
     else
@@ -226,21 +202,15 @@ bool BlockDeTreasure::JudgeingColor()
 
         if(WinnerColor == 1)
         {
-            mState = INIT_GETTING_BLOCK;
+            //mState = INIT_GETTING_BLOCK;
 
             NotJudgeBlockFlag = 1;
+
+            SelectGetting();
         }
         else
         {
-            if(BlockCount == 0)
-            {
-                mState = INIT_GETOUT_BLOCK;
-            }
-
-            if(BlockCount == 1)
-            {
-                mState = INIT_GETOUT_BLOCK_LEFT;
-            }
+           SelectGetout();
         }
 
     }
@@ -322,6 +292,30 @@ bool BlockDeTreasure::GettingBlock()
     }
 }
 
+bool BlockDeTreasure::GettingBlockLeft()
+{
+   if(BlockCount == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_2;
+        }
+    }
+
+    if(BlockCount == 2)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_3;
+        }
+    }
+
+    if(BlockCount == 3)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_GOAL;
+        }
+    }
+}
+
 
 bool BlockDeTreasure::MoveToGoal()
 {
@@ -329,3 +323,209 @@ bool BlockDeTreasure::MoveToGoal()
         mState = END;
     }
 }
+
+#if PATARN == 1
+void BlockDeTreasure::SelectGetout()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+}
+#endif
+
+#if PATARN == 2
+void BlockDeTreasure::SelectGetout()
+{
+
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+}
+#endif
+
+#if PATARN == 3
+void BlockDeTreasure::SelectGetout()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+}
+#endif
+
+#if PATARN == 4
+void BlockDeTreasure::SelectGetout()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+}
+#endif
+
+#if PATARN == 5
+void BlockDeTreasure::SelectGetout()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK;
+    }
+
+}
+#endif
+
+#if PATARN == 1
+void BlockDeTreasure::SelectGetting()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+}
+#endif
+
+#if PATARN == 2
+void BlockDeTreasure::SelectGetting()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+}
+#endif
+
+#if PATARN == 3
+void BlockDeTreasure::SelectGetting()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+}
+#endif
+
+#if PATARN == 4
+void BlockDeTreasure::SelectGetting()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+}
+#endif
+
+#if PATARN == 5
+void BlockDeTreasure::SelectGetting()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+}
+#endif
