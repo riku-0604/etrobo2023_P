@@ -3,7 +3,7 @@
 
 
 curvevirtuallinetracer::curvevirtuallinetracer(Odometry *odo,SpeedControl *scon):
-SimpleWalker(odo,scon)
+SimpleWalker(odo,scon),mCurve(0)
 {
 
 }
@@ -17,7 +17,10 @@ void curvevirtuallinetracer::run()
     radius = twopointlength(sensorx,sensory,centerx,centery);
     mTurn = calcTurn(radius);
     setCommandV((int)mspeed, (int)mTurn);
-
+    printf(" centerx : %f\n",centerx);
+    printf(" centery : %f\n",centery);
+    printf(" sensorx : %f\n",sensorx);
+    printf(" sensory : %f\n",sensory);
     SimpleWalker::run();
 
 }
@@ -28,9 +31,10 @@ void curvevirtuallinetracer::init()
     my = mYpoint->getValue();
     mangle = mTurnAngle->getValue();
     centorpoint(rad,mx,my,mangle);
+    
 }
 
-double curvevirtuallinetracer::calcTurn(double val1) //setpara‚Ì”¼Œa‚Ì’l‚ªƒ}ƒCƒiƒX‚©ƒvƒ‰ƒX‚©‚Åif•¶‚ğl‚¦‚é‚©‚ÂŒvZ‚à‚©‚¦‚éBsetBias‚ğÀ‘•‚·‚é‚©‚ÍÀ‹@‚ª‹È‚ª‚ê‚é‚©‹È‚ª‚ê‚È‚¢‚©Ÿ‘æ
+double curvevirtuallinetracer::calcTurn(double val1) //setparaï¿½Ì”ï¿½ï¿½aï¿½Ì’lï¿½ï¿½ï¿½}ï¿½Cï¿½iï¿½Xï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ÂŒvï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½BsetBiasï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Íï¿½ï¿½@ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½é‚©ï¿½È‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
     double val1_turn =  mPid->getOperation(val1);
 
@@ -52,14 +56,14 @@ double curvevirtuallinetracer::calcTurn(double val1) //setpara‚Ì”¼Œa‚Ì’l‚ªƒ}ƒCƒi
 void curvevirtuallinetracer::setpara(double para3[])
 {
 
-    rad = para3[0];//”¼Œa
-    mspeed = para3[1];//‘¬“x
+    rad = para3[0];//ï¿½ï¿½ï¿½a
+    mspeed = para3[1];//ï¿½ï¿½ï¿½x
     mp = para3[2];//P
     mi = para3[3];//I
     md = para3[4];//D
 
 
-    mangle = mTurnAngle->getValue();//ù‰ñŠp“x
+    mangle = mTurnAngle->getValue();//ï¿½ï¿½ï¿½ï¿½pï¿½x
 
 
     mPid->setTarget(fabs (rad));
