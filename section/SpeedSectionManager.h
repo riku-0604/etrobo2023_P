@@ -32,23 +32,17 @@ class SpeedSectionManager : public SectionManager {
             */
            
         SecParam spara [100] = {
-            /*{Section::TRACER,{60, -0.25,  30, 70, 6.2525,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{250},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},*/
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
-            {Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{300},Section::NONE,{}},
-            {Section::TRACER,{35, -0.25,  0, 0, 0,10,0,LineTracer::LEFTEDGE},Section::LENGTH,{50},Section::NONE,{}},
-        /*  {Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{170},Section::NONE,{}},
-            {Section::TRACER,{35, -0.25,  0, 0,0,10,0,LineTracer::LEFTEDGE},Section::LENGTH,{50},Section::NONE,{}},
-            {Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{25},Section::NONE,{}},
+            {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{300},Section::NONE,{}},
+            {Section::TRACER,{50, 0,  30, 10, 7,20,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
+            {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{189},Section::NONE,{}},
+            {Section::TRACER,{50, 0,  30, 10, 7,20,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
+            {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{21},Section::NONE,{}},//LAP
 
-            {Section::WALKER,{0, 0},Section::TIME,{50},Section::NONE,{}},
-            {Section::TRACER,{28, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{15},Section::NONE,{}},
-        */      //{Section::VIRTUALCURVE,{-10,18,22,5,2},Section::LENGTH,{15},Section::NONE,{}},
-
-
-
-            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
+            
+            {Section::TRACER,{18, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},//青マーカー検知用
+            
 
             {Section::END,{},Section::ENDJ,{}},
         };

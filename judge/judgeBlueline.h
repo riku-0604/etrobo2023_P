@@ -1,0 +1,2 @@
+#ifndef JUDGEBLUE_COLOR
+#define JUDGEBLUE_COLOR
