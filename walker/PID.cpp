@@ -2,7 +2,7 @@
 #include "util.h"
 
 PID::PID()
-    :PID(0.010)
+    :PID(0.004)
 {
 }
 

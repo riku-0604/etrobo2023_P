@@ -11,6 +11,105 @@ MotorManager::MotorManager(Motor *left, Motor *right):
 }
 void MotorManager::setPwm(int left,int right)
 {
-    mLeftMotor->setPWM(left);
-    mRightMotor->setPWM(right);
+
+    if(left !=0 && right !=0)
+    {
+        mNowLeftMotorCount = mLeftMotor->getCount();
+        mNowRightMotorCount = mRightMotor->getCount();
+
+        if(mInitLeftMotorCount == mNowLeftMotorCount)
+        {
+            if(mLeftMotorCount >= 400)
+            {
+                if(mNowLeftMotorCount >= 0)
+                {
+                    if(Set90Count > 0)
+                    {
+                        mLeftMotor->setPWM(90);
+                        Set90Count--;
+                    }
+                }
+                else
+                {
+                    if(Set90Count > 0)
+                    {
+                        mLeftMotor->setPWM(-90);
+                        Set90Count--;
+                    }
+                }
+            }
+            else
+            {
+                mLeftMotorCount++;
+            }
+        }
+        else
+        {
+            mInitLeftMotorCount = mNowLeftMotorCount;
+            mLeftMotorCount = 0.0;
+        }
+    
+        if(mInitRightMotorCount == mNowRightMotorCount)
+        {
+            if(mRightMotorCount >= 400)
+            {
+                if(mNowRightMotorCount >= 0)
+                {
+                    if(Set90Count > 0)
+                    {
+                        mRightMotor->setPWM(90);
+                        Set90Count--;
+                    }
+                }
+                else
+                {
+                    if(Set90Count > 0)
+                    {
+                        mRightMotor->setPWM(-90);
+                        Set90Count--;
+                    }
+                }
+            }
+            else
+            {
+                mRightMotorCount++;
+            }
+        }
+        else
+        {
+            mInitRightMotorCount = mNowRightMotorCount;
+            mRightMotorCount = 0.0;
+        }
+
+        /*mLeftMotorCount++;
+        mInitRightMotorPower++;*/
+    }   
+    
+
+    if(Set90Count == 0  || (right != 0 && left !=0))
+    {
+        mLeftMotor->setPWM(left);
+        mRightMotor->setPWM(right);
+    }
+
+    if(right == 0)
+    {
+        mRightMotor->setPWM(0);
+    }
+
+    if(left == 0)
+    {
+        mLeftMotor->setPWM(0);
+    }
+
+}
+
+void MotorManager::init()
+{
+    mLeftMotorCount = 0.0;
+    mRightMotorCount = 0.0;
+
+    mInitLeftMotorCount = mLeftMotor->getCount();
+    mInitRightMotorCount = mRightMotor->getCount();
+
 }

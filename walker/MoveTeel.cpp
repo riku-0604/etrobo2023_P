@@ -4,6 +4,7 @@
 
 extern TeelAngle *gTeelAngle;
 extern Motor *gTeel;
+extern MotorManager *gMotor;
 
 MoveTeel::MoveTeel(Odometry *odo):Walker(odo)
 {
@@ -22,8 +23,6 @@ void MoveTeel::run()
     //printf("runteel");
     // mTeelForward  //–Ú•W’l
     gTeel->setPWM(mTeelForward);
-
-
 }
 
 

@@ -9,6 +9,7 @@
 #include "SimpleWalker.h"
 #include "Walker.h"
 #include "util.h"
+#include "MotorManager.h"
 // 定数宣言
 /**
  * コンストラクタ
@@ -17,6 +18,9 @@
  * @param rightWheel 右モータ
  * @param balancer   バランサ
  */
+
+extern MotorManager *gMotor;
+
 SimpleWalker::SimpleWalker(
                         Odometry *odo,
                         SpeedControl *scon
@@ -26,13 +30,16 @@ SimpleWalker::SimpleWalker(
         mForward(0),
         mTurn(0),
         mBreake_flag(false),
-        mMode_flag(false)
+        mMode_flag(false),
+        mMotor(gMotor)
 {
 }
 
 void SimpleWalker::init()
 {
     //printf("mForward%f\n",mForward);
+
+    mMotor->init();
     setCommand(minitForward,minitTurn);
      //printf("minitForward%f\n",minitForward);
     // printf("minitTurn%f\n",minitTurn);
@@ -75,7 +82,7 @@ void SimpleWalker::run() {
     if(pwm_r<-100) pwm_r=-100;
     if(pwm_l<-100) pwm_l=-100;
 
-    mOdo->setPwm(pwm_l,pwm_r);
+    mMotor->setPwm(pwm_l,pwm_r);
 }
 
 /**

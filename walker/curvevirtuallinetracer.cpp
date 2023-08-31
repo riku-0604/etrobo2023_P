@@ -17,10 +17,10 @@ void curvevirtuallinetracer::run()
     radius = twopointlength(sensorx,sensory,centerx,centery);
     mTurn = calcTurn(radius);
     setCommandV((int)mspeed, (int)mTurn);
-    printf(" centerx : %f\n",centerx);
+    /*printf(" centerx : %f\n",centerx);
     printf(" centery : %f\n",centery);
     printf(" sensorx : %f\n",sensorx);
-    printf(" sensory : %f\n",sensory);
+    printf(" sensory : %f\n",sensory);*/
     SimpleWalker::run();
 
 }
@@ -34,7 +34,7 @@ void curvevirtuallinetracer::init()
     
 }
 
-double curvevirtuallinetracer::calcTurn(double val1) //setparaï¿½Ì”ï¿½ï¿½aï¿½Ì’lï¿½ï¿½ï¿½}ï¿½Cï¿½iï¿½Xï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½é‚©ï¿½ÂŒvï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½BsetBiasï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Íï¿½ï¿½@ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½é‚©ï¿½È‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+double curvevirtuallinetracer::calcTurn(double val1) //setpara?¿½Ì”ï¿½?¿½a?¿½Ì’l?¿½?¿½?¿½}?¿½C?¿½i?¿½X?¿½?¿½?¿½v?¿½?¿½?¿½X?¿½?¿½?¿½?¿½if?¿½?¿½?¿½?¿½?¿½l?¿½?¿½?¿½é‚©?¿½ÂŒv?¿½Z?¿½?¿½?¿½?¿½?¿½?¿½?¿½?¿½BsetBias?¿½?¿½?¿½?¿½?¿½?¿½?¿½?¿½?¿½é‚©?¿½Íï¿½?¿½@?¿½?¿½?¿½È‚ï¿½?¿½?¿½é‚©?¿½È‚ï¿½?¿½?¿½È‚ï¿½?¿½?¿½?¿½?¿½?¿½?¿½
 {
     double val1_turn =  mPid->getOperation(val1);
 
@@ -56,14 +56,14 @@ double curvevirtuallinetracer::calcTurn(double val1) //setparaï¿½Ì”ï¿½ï¿½aï¿½Ì’l
 void curvevirtuallinetracer::setpara(double para3[])
 {
 
-    rad = para3[0];//ï¿½ï¿½ï¿½a
-    mspeed = para3[1];//ï¿½ï¿½ï¿½x
+    rad = para3[0];//?¿½?¿½?¿½a
+    mspeed = para3[1];//?¿½?¿½?¿½x
     mp = para3[2];//P
     mi = para3[3];//I
     md = para3[4];//D
 
 
-    mangle = mTurnAngle->getValue();//ï¿½ï¿½ï¿½ï¿½pï¿½x
+    mangle = mTurnAngle->getValue();//?¿½?¿½?¿½?¿½p?¿½x
 
 
     mPid->setTarget(fabs (rad));

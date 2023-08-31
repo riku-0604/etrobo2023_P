@@ -14,6 +14,7 @@
 #include "Odometry.h"
 #include "PID.h"
 #include "SpeedControl.h"
+#include "MotorManager.h" 
 
 class SimpleWalker : public Walker {
 public:
@@ -39,6 +40,7 @@ protected:
     bool mMode_flag;//setComandV„Å?„Å®true„ÄÅsetComand„Å?„Å®false
 
     SpeedControl *mSpeedControl;
+    MotorManager *mMotor;
 
 private:
     double minitForward;

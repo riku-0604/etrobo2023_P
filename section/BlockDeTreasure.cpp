@@ -6,7 +6,7 @@
 BlockDeTreasure::BlockDeTreasure():
     mState(INIT_INTO_BLOCK_DE_TREASURE)
 {
-    // testï¿½pï¿½ï¿½ï¿½ï¿½??
+    // test?¿½p?¿½?¿½?¿½?¿½??
  #if defined(MAKE_RIGHT)
       const int _EDGE = LineTracer::LEFTEDGE;
 #else
@@ -103,6 +103,15 @@ bool BlockDeTreasure::run()
         case GETOUT_BLOCK:
             GetoutBlock();
             break;
+        case INIT_GETOUT_BLOCK_RED:
+            //reset();
+            init(GetoutBlockRedpara);
+            BlockCount++;
+            mState = GETOUT_BLOCK_RED;
+            break;
+        case GETOUT_BLOCK_RED:
+            GetoutBlock();
+            break;
         case INIT_GETOUT_BLOCK_LEFT:
             //reset();
             init(GetoutBlockLeftpara);
@@ -110,6 +119,15 @@ bool BlockDeTreasure::run()
             mState = GETOUT_BLOCK_LEFT;
             break;
         case GETOUT_BLOCK_LEFT:
+            GetoutBlockLeft();
+            break;
+        case INIT_GETOUT_BLOCK_LEFT_RED:
+            //reset();
+            init(GetoutBlockLeftRedpara);
+            BlockCount++;
+            mState = GETOUT_BLOCK_LEFT_RED;
+            break;
+        case GETOUT_BLOCK_LEFT_RED:
             GetoutBlockLeft();
             break;
         case INIT_GETTING_BLOCK:
@@ -139,7 +157,7 @@ bool BlockDeTreasure::run()
             MoveToGoal();
             break;
         case END:
-            
+            return true;
             break;
         default:
             msg_log("BlockDeTreasure error!!");
@@ -162,7 +180,7 @@ bool BlockDeTreasure::MoveToBlock()
     if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-           SelectGetout();
+           SelectGetoutRed();
         }
     }
     else
@@ -178,7 +196,7 @@ bool BlockDeTreasure::MoveToBlock2()
     if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-            SelectGetout();
+            SelectGetoutRed();
         }
     }
     else
@@ -194,7 +212,7 @@ bool BlockDeTreasure::MoveToBlock3()
    if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-            SelectGetout();
+            SelectGetoutRed();
         }
     }
     else
@@ -227,102 +245,24 @@ bool BlockDeTreasure::JudgeingColor()
 
 bool BlockDeTreasure::GetoutBlock()
 {
-
-    if(BlockCount == 1)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_2;
-        }
-    }
-
-    if(BlockCount == 2)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_3;
-        }
-    }
-
-    if(BlockCount == 3)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_GOAL;
-        }
-    }
+   SelectMove();
 }
 
 bool BlockDeTreasure::GetoutBlockLeft()
 {
-
-    if(BlockCount == 1)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_2;
-        }
-    }
-
-    if(BlockCount == 2)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_3;
-        }
-    }
-
-    if(BlockCount == 3)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_GOAL;
-        }
-    }
+   SelectMove();
 }
 
 
 
 bool BlockDeTreasure::GettingBlock()
 {
-   if(BlockCount == 1)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_2;
-        }
-    }
-
-    if(BlockCount == 2)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_3;
-        }
-    }
-
-    if(BlockCount == 3)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_GOAL;
-        }
-    }
+   SelectMove();
 }
 
 bool BlockDeTreasure::GettingBlockLeft()
 {
-   if(BlockCount == 1)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_2;
-        }
-    }
-
-    if(BlockCount == 2)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_BLOCK_3;
-        }
-    }
-
-    if(BlockCount == 3)
-    {
-        if(SectionManager::run()){
-            mState = INIT_MOVE_TO_GOAL;
-        }
-    }
+   SelectMove();
 }
 
 
@@ -330,6 +270,30 @@ bool BlockDeTreasure::MoveToGoal()
 {
     if(SectionManager::run()){
         mState = END;
+    }
+}
+
+void BlockDeTreasure::SelectMove()
+{
+    if(BlockCount == 1)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_2;
+        }
+    }
+
+    if(BlockCount == 2)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_BLOCK_3;
+        }
+    }
+
+    if(BlockCount == 3)
+    {
+        if(SectionManager::run()){
+            mState = INIT_MOVE_TO_GOAL;
+        }
     }
 }
 
@@ -352,12 +316,47 @@ void BlockDeTreasure::SelectGetout()
     }
 
 }
+
+void BlockDeTreasure::SelectGetting()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETTING_BLOCK_LEFT;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETTING_BLOCK;
+    }
+}
+
+void BlockDeTreasure::SelectGetoutRed()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+}
 #endif
 
 #if PATARN == 2
 void BlockDeTreasure::SelectGetout()
 {
-
     if(BlockCount == 0)
     {
         mState = INIT_GETOUT_BLOCK;
@@ -371,6 +370,25 @@ void BlockDeTreasure::SelectGetout()
     if(BlockCount == 2)
     {
         mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+}
+
+void BlockDeTreasure::SelectGetoutRed()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
     }
 
 }
@@ -395,6 +413,25 @@ void BlockDeTreasure::SelectGetout()
     }
 
 }
+
+void BlockDeTreasure::SelectGetoutRed()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+
+}
 #endif
 
 #if PATARN == 4
@@ -413,6 +450,25 @@ void BlockDeTreasure::SelectGetout()
     if(BlockCount == 2)
     {
         mState = INIT_GETOUT_BLOCK_LEFT;
+    }
+
+}
+
+void BlockDeTreasure::SelectGetoutRed()
+{
+    if(BlockCount == 0)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
+    }
+
+    if(BlockCount == 1)
+    {
+        mState = INIT_GETOUT_BLOCK_RED;
+    }
+
+    if(BlockCount == 2)
+    {
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
     }
 
 }
@@ -437,26 +493,29 @@ void BlockDeTreasure::SelectGetout()
     }
 
 }
-#endif
 
-#if PATARN == 1
-void BlockDeTreasure::SelectGetting()
+void BlockDeTreasure::SelectGetoutRed()
 {
     if(BlockCount == 0)
     {
-        mState = INIT_GETTING_BLOCK;
+        mState = INIT_GETOUT_BLOCK_RED;
     }
 
     if(BlockCount == 1)
     {
-        mState = INIT_GETTING_BLOCK_LEFT;
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
     }
 
     if(BlockCount == 2)
     {
-        mState = INIT_GETTING_BLOCK;
+        mState = INIT_GETOUT_BLOCK_RED;
     }
+
 }
+#endif
+
+#if PATARN == 1
+
 #endif
 
 #if PATARN == 2

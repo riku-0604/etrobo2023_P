@@ -39,6 +39,7 @@ class Section {
             TURNANGLE,
             ARMANGLE,
             TEELANGLE,
+            BRIGHTNESS,
             ENDJ,
             NONE
         };

@@ -18,6 +18,7 @@ class DoubleLoop : public SectionManager {
             TURNANGLE,{旋回角度}  //走行体が受け取る値は右回転がマイナス、左回転はプラス//
             ARMANGLE,{アーム角度}
             TEELANGLE,{しっぽの目標角度}
+            BRIGHTNESS,{輝度値,白判定1黒判定0}
             ENDJ,
             NONE
             */
@@ -32,6 +33,8 @@ class DoubleLoop : public SectionManager {
            
         SecParam spara [100] = {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            //{Section::TRACER,{16, -0.25,  50, 30, 13,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{10},Section::NONE,{}},
+            //{Section::VIRTUALSTRAIGHT,{0,16,20,5,2},Section::COLOR,{15,0.5},Section::NONE,{}},
             //{Section::TRACER,{20, -0.25,  55, 10, 7.8,0,0,LineTracer::RIGHTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},
 
 

@@ -6,6 +6,7 @@
 #include "judgeTurnAngle.h"
 #include "judgeArmAngle.h"
 #include "judgeTeelAngle.h"
+#include "judgeBrightness.h"
 #include "curvevirtuallinetracer.h"
 #include "straightvirtuallinetracer.h"
 #include "TurnWalker.h"
@@ -157,6 +158,8 @@ Judge *Section::selectJudge(int no)
         case TEELANGLE:
            mJudge = (new JudgeTeelAngle());
            break;
+        case BRIGHTNESS:
+            mJudge = (new JudgeBrightness());
         case ENDJ:
             break;
         /*case */

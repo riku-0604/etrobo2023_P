@@ -10,34 +10,37 @@ class SpeedSectionManager : public SectionManager {
     protected:
 
     private:
-        /*ï¿½ï¿½ï¿½ï¿½
-            LENGTH,{ï¿½ï¿½ï¿½ï¿½}
-            TIME,{ï¿½ï¿½ï¿½ï¿½}
-            COLOR,{ï¿½F,ï¿½Ê“x}
-            BLOCKCOLOR,{ï¿½Ôƒuï¿½ï¿½ï¿½bï¿½N,ï¿½Âƒuï¿½ï¿½ï¿½bï¿½N,ï¿½Ê“x,ï¿½ï¿½ï¿½ï¿½}
-            TURNANGLE,{ï¿½ï¿½ï¿½ï¿½pï¿½x}  //ï¿½ï¿½ï¿½sï¿½Ì‚ï¿½ï¿½ó‚¯Žï¿½ï¿½lï¿½Í‰Eï¿½ï¿½]ï¿½ï¿½ï¿½}ï¿½Cï¿½iï¿½Xï¿½Aï¿½ï¿½ï¿½ï¿½]ï¿½Íƒvï¿½ï¿½ï¿½X//
-            ARMANGLE,{ï¿½Aï¿½[ï¿½ï¿½ï¿½pï¿½x}
-            TEELANGLE,{ï¿½ï¿½ï¿½ï¿½ï¿½Û‚Ì–Ú•Wï¿½pï¿½x}
+        /*?¿½?¿½?¿½?¿½
+            LENGTH,{?¿½?¿½?¿½?¿½}
+            TIME,{?¿½?¿½?¿½?¿½}
+            COLOR,{?¿½F,?¿½Ê“x}
+            BLOCKCOLOR,{?¿½Ôƒu?¿½?¿½?¿½b?¿½N,?¿½Âƒu?¿½?¿½?¿½b?¿½N,?¿½Ê“x,?¿½?¿½?¿½?¿½}
+            TURNANGLE,{?¿½?¿½?¿½?¿½p?¿½x}  //?¿½?¿½?¿½s?¿½Ì‚ï¿½?¿½?¯Žï¿½?¿½l?¿½Í‰E?¿½?¿½]?¿½?¿½?¿½}?¿½C?¿½i?¿½X?¿½A?¿½?¿½?¿½?¿½]?¿½Íƒv?¿½?¿½?¿½X//
+            ARMANGLE,{?¿½A?¿½[?¿½?¿½?¿½p?¿½x}
+            TEELANGLE,{?¿½?¿½?¿½?¿½?¿½Û‚Ì–Ú•W?¿½p?¿½x}
             ENDJ,
             NONE
             */
 
-           /*ï¿½ï¿½ï¿½ï¿½
-            WALKER,{ï¿½Oï¿½iï¿½Ìƒpï¿½ï¿½ï¿½[,ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½ï¿½ï¿½[}  //ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½ï¿½ï¿½[ï¿½Í‰Eï¿½ï¿½]ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Xï¿½Aï¿½ï¿½ï¿½ï¿½]ï¿½Íƒ}ï¿½Cï¿½iï¿½X//
-            TRACER,{ï¿½ï¿½ï¿½x,ï¿½ï¿½ï¿½ï¿½,P,I,D,ï¿½pï¿½xï¿½Ú•Wï¿½l,ï¿½ï¿½ï¿½ï¿½ï¿½P}
-            ARM,{ï¿½Ú•Wï¿½ÌƒAï¿½[ï¿½ï¿½ï¿½ÌŠpï¿½x}
-            TEEL,{ï¿½ï¿½ï¿½ï¿½ï¿½Û‚Ìƒï¿½ï¿½[ï¿½^ï¿½[ï¿½Ì‹ï¿½ï¿½ï¿½}
-            VIRTUALSTRAIGHT,{ï¿½ï¿½ï¿½sï¿½pï¿½x,ï¿½ï¿½ï¿½x,P,I,D}
+           /*?¿½?¿½?¿½?¿½
+            WALKER,{?¿½O?¿½i?¿½Ìƒp?¿½?¿½?¿½[,?¿½?¿½?¿½?¿½Ìƒp?¿½?¿½?¿½[}  //?¿½?¿½?¿½?¿½Ìƒp?¿½?¿½?¿½[?¿½Í‰E?¿½?¿½]?¿½?¿½?¿½v?¿½?¿½?¿½X?¿½A?¿½?¿½?¿½?¿½]?¿½Íƒ}?¿½C?¿½i?¿½X//
+            TRACER,{?¿½?¿½?¿½x,?¿½?¿½?¿½?¿½,P,I,D,?¿½p?¿½x?¿½Ú•W?¿½l,?¿½?¿½?¿½?¿½?¿½P}
+            ARM,{?¿½Ú•W?¿½ÌƒA?¿½[?¿½?¿½?¿½ÌŠp?¿½x}
+            TEEL,{?¿½?¿½?¿½?¿½?¿½Û‚Ì??¿½?¿½[?¿½^?¿½[?¿½Ì‹ï¿½?¿½?¿½}
+            VIRTUALSTRAIGHT,{?¿½?¿½?¿½s?¿½p?¿½x,?¿½?¿½?¿½x,P,I,D}
             END
             */
            
         SecParam spara [100] = {
-            /*{Section::TRACER,{60, -0.25,  30, 70, 6.2525,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{250},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},*/
+            //{Section::TRACER,{60, -0.25,  30, 70, 6.2525,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{250},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
-            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
-            {Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{300},Section::NONE,{}},
-            {Section::TRACER,{35, -0.25,  0, 0, 0,10,0,LineTracer::LEFTEDGE},Section::LENGTH,{50},Section::NONE,{}},
+
+
+            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
+            //{Section::WALKER,{20,0},Section::BRIGHTNESS,{0.25,0},Section::NONE,{}},
+            //{Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
+            //{Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{300},Section::NONE,{}},
+            //{Section::TRACER,{35, -0.25,  0, 0, 0,10,0,LineTracer::LEFTEDGE},Section::LENGTH,{50},Section::NONE,{}},
         /*  {Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{170},Section::NONE,{}},
             {Section::TRACER,{35, -0.25,  0, 0,0,10,0,LineTracer::LEFTEDGE},Section::LENGTH,{50},Section::NONE,{}},
             {Section::TRACER,{70, -0.25,  30, 10, 9.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{25},Section::NONE,{}},
@@ -48,8 +51,8 @@ class SpeedSectionManager : public SectionManager {
 
 
 
-            {Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
-
+            //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
         /*{

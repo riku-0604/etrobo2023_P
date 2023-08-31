@@ -36,6 +36,7 @@ APPL_CXXOBJS += \
 	judge.o \
 	judgeLength.o \
 	judgeColor.o \
+	judgeBrightness.o\
 	judgeBlockColor.o\
 	judgeTime.o \
 	MotorManager.o \
