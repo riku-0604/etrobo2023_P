@@ -7,6 +7,7 @@
 #include "TurnAngle.h"
 #include "ArmAngle.h"
 #include "TeelAngle.h"
+#include "Brightness.h"
 
 class Judge
 {
@@ -29,6 +30,7 @@ class Judge
         TurnAngle *mTurnAngle;
         ArmAngle *mArmAngle;
         TeelAngle *mTeelAngle;
+        Brightness *mBrightness;
 
         enum State {
         INIT,

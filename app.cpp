@@ -3,7 +3,7 @@
 #include "util.h"
 
 #include "Motor.h"
-
+#include "MotorManager.h"
 #include "Polling.h"
 #include "MyColorSensor.h"
 #include "Brightness.h"
@@ -58,7 +58,7 @@ Xpoint *gXpoint;
 Ypoint *gYpoint;
 
 Scene *gScene;
-
+MotorManager *gMotor;
 
 static void user_system_create() {
 
@@ -73,7 +73,9 @@ static void user_system_create() {
   gYpoint = new Ypoint();
   gVelocity = new Velocity();
 
+  gMotor = new MotorManager(gLeftWheel,gRightWheel);
   gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity,gXpoint,gYpoint);
+
   gArmAngle = new ArmAngle();
   gTeelAngle = new TeelAngle();
   //gOdo = new Odometry(gLeftWheel,gRightWheel,gLength,gTurnAngle,gVelocity);

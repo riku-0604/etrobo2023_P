@@ -18,6 +18,7 @@ class DoubleLoop : public SectionManager {
             TURNANGLE,{����p�x}  //���s�̂��󂯎��l�͉E��]���}�C�i�X�A����]�̓v���X//
             ARMANGLE,{�A�[���p�x}
             TEELANGLE,{�����ۂ̖ڕW�p�x}
+            BRIGHTNESS,{�P�x�l,������1������0}
             ENDJ,
             NONE
             */

@@ -8,11 +8,13 @@ extern HsvSatu *gSatu;
 extern TurnAngle *gTurnAngle;
 extern ArmAngle *gArmAngle;
 extern TeelAngle *gTeelAngle;
+extern Brightness *gBrightness;
 
 Judge::Judge():
     mLength(gLength),
     mHue(gHue),
     mSatu(gSatu),
+    mBrightness(gBrightness),
     mTurnAngle(gTurnAngle),
     mArmAngle(gArmAngle),
     mTeelAngle(gTeelAngle),
