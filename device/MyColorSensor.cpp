@@ -42,7 +42,7 @@ void MyColorSensor::setRGB()
     static char str[256];
     rgb_raw_t  raw;
 
-    printf("RGBsetOK");
+    //printf("RGBsetOK");
 
     mColor->getRawColor(raw);
 

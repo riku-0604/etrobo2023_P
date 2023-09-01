@@ -6,16 +6,16 @@
 class BlockDeTreasure : public SectionManager {
     public:
         BlockDeTreasure();
-        bool IntoBlockDeTreasure();//?¿½u?¿½?¿½?¿½b?¿½N?¿½G?¿½?¿½?¿½A?¿½É“ï¿½?¿½?¿½
-        bool MoveToBlock();//?¿½u?¿½?¿½?¿½b?¿½N?¿½Ü‚ÅˆÚ“ï¿½?¿½?¿½?¿½?¿½
+        bool IntoBlockDeTreasure();//?ï¿½ï¿½u?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N?ï¿½ï¿½G?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½A?ï¿½ï¿½É“ï¿½?ï¿½ï¿½?ï¿½ï¿½
+        bool MoveToBlock();//?ï¿½ï¿½u?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N?ï¿½ï¿½Ü‚ÅˆÚ“ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         bool MoveToBlock2();
         bool MoveToBlock3();
-        bool GetoutBlock();//?¿½u?¿½?¿½?¿½b?¿½N?¿½?¿½Ç‚ï¿½?¿½o?¿½?¿½
+        bool GetoutBlock();//?ï¿½ï¿½u?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N?ï¿½ï¿½?ï¿½ï¿½Ç‚ï¿½?ï¿½ï¿½o?ï¿½ï¿½?ï¿½ï¿½
         bool GetoutBlockLeft();
-        bool JudgeingColor();//?¿½u?¿½?¿½?¿½b?¿½N?¿½ÌF?¿½?»’è‚·?¿½?¿½
-        bool GettingBlock();//?¿½u?¿½?¿½?¿½b?¿½N?¿½?¿½?¿½æ“¾?¿½?¿½?¿½?¿½
+        bool JudgeingColor();//?ï¿½ï¿½u?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N?ï¿½ï¿½ÌF?ï¿½ï¿½?ï¿½ï¿½è‚·?ï¿½ï¿½?ï¿½ï¿½
+        bool GettingBlock();//?ï¿½ï¿½u?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½æ“¾?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         bool GettingBlockLeft();
-        bool MoveToGoal();//?¿½S?¿½[?¿½?¿½?¿½Ü‚ÅˆÚ“ï¿½?¿½?¿½?¿½?¿½
+        bool MoveToGoal();//?ï¿½ï¿½S?ï¿½ï¿½[?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ü‚ÅˆÚ“ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         
         void SelectGetout();
         void SelectGetoutRed();
@@ -83,7 +83,7 @@ class BlockDeTreasure : public SectionManager {
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{1},Section::NONE,{}},
             
             {Section::TURNWALKER,{20,40,5,3},Section::TURNANGLE,{-78},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{0,36,20,5,4},Section::LENGTH,{58},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,36,20,5,4},Section::LENGTH,{60.5},Section::NONE,{}},
             
             {Section::WALKER,{0, 0},Section::TIME,{2},Section::NONE,{}},
             {Section::TURNWALKER,{-20,40,5,3},Section::TURNANGLE,{78},Section::NONE,{}},
@@ -120,13 +120,13 @@ class BlockDeTreasure : public SectionManager {
             {Section::WALKER,{-10, 0},Section::LENGTH,{-13},Section::NONE,{}},
             {Section::TRACER,{16, -0.25,  50, 7, 10,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{16},Section::NONE,{}},
             
-            {Section::VIRTUALSTRAIGHT,{0,16,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},//é?
+            {Section::VIRTUALSTRAIGHT,{0,16,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{200,0.5},Section::NONE,{}},//ï¿½?
             
             {Section::VIRTUALSTRAIGHT,{0,16,20,5,2},Section::LENGTH,{9},Section::NONE,{}},
             
             
         
-            {Section::TRACER,{16, -0.25,  50, 7, 13,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{17},Section::NONE,{}},//?¿½?
+            {Section::TRACER,{16, -0.25,  50, 7, 13,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{17},Section::NONE,{}},//?ï¿½ï¿½?
             
             {Section::VIRTUALSTRAIGHT,{0,16,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//èµ¤
             {Section::VIRTUALSTRAIGHT,{0,16,20,5,2},Section::LENGTH,{9},Section::NONE,{}},
@@ -152,7 +152,7 @@ class BlockDeTreasure : public SectionManager {
             {Section::VIRTUALCURVE,{-7,21,22,5,2},Section::LENGTH,{12},Section::NONE,{}},
             //{Section::WALKER,{0, 0},Section::TIME,{80},Section::NONE,{}},
             //{Section::WALKER,{15, 0},Section::LENGTH,{2},Section::NONE,{}},
-            {Section::TRACER,{16, -0.25,  50, 53, 9,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{17},Section::NONE,{}},//?¿½?
+            {Section::TRACER,{16, -0.25,  50, 53, 9,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{17},Section::NONE,{}},//?ï¿½ï¿½?
             //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{0,16,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//èµ¤
             //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}}, 
@@ -179,10 +179,10 @@ class BlockDeTreasure : public SectionManager {
 
 
             {Section::TRACER,{20, -0.25,  50, 53, 9,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{17},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{0,20,20,5,2},Section::COLOR,{40,0.5},Section::NONE,{}},//é»?
+            {Section::VIRTUALSTRAIGHT,{0,20,20,5,2},Section::COLOR,{40,0.5},Section::NONE,{}},//ï¿½?
             {Section::VIRTUALSTRAIGHT,{0,20,20,5,2},Section::LENGTH,{9},Section::NONE,{}},
             {Section::TRACER,{20, -0.25,  50, 53, 9,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{17},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{0,20,20,5,2},Section::COLOR,{40,0.5},Section::NONE,{}},//é»?
+            {Section::VIRTUALSTRAIGHT,{0,20,20,5,2},Section::COLOR,{40,0.5},Section::NONE,{}},//ï¿½?
 
             /*{Section::TURNWALKER,{40,40,5,3},Section::TURNANGLE,{-47},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{0,12,22,5,2},Section::LENGTH,{10},Section::NONE,{}},
@@ -329,7 +329,7 @@ class BlockDeTreasure : public SectionManager {
 
             {Section::TRACER,{20, -0.25,  50, 15, 13,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{35},Section::NONE,{}},
 
-            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},//‚µ‚Á‚Û‚ğ–ß‚·ˆ—
+            {Section::DEFOLTARMCHANGE,{40},Section::TIME,{1},Section::NONE,{}},//ï¿½ï¿½ï¿½ï¿½ï¿½Û‚ï¿½ß‚ï¿½ï¿½ï¿½ï¿½ï¿½
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::TEEL,{-70},Section::TEELANGLE,{-4200},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},

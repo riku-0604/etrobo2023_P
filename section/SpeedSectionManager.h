@@ -35,14 +35,17 @@ class SpeedSectionManager : public SectionManager {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
             {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{300},Section::NONE,{}},
-            {Section::TRACER,{50, 0,  30, 10, 7,20,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
-            {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{189},Section::NONE,{}},
-            {Section::TRACER,{50, 0,  30, 10, 7,20,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
-            {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{21},Section::NONE,{}},//LAP
-
-            
-            {Section::TRACER,{18, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},//青マーカー検知用
-            
+            {Section::TRACER,{50, 0,  30, 10, 7,15,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
+            {Section::TRACER,{75, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{188},Section::NONE,{}},
+            {Section::TRACER,{50, 0,  30, 10, 7,15,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
+            {Section::TRACER,{60, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{18},Section::NONE,{}},//LAP
+            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
+            {Section::TRACER,{20, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{5},Section::NONE,{}},
+            {Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{20},Section::NONE,{}},
+            {Section::TRACER,{20, -0.3,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{5},Section::NONE,{}},
+            {Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{5},Section::NONE,{}},
+            //{Section::TRACER,{11.5, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},//青マーカー検知用
+            //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
 
             {Section::END,{},Section::ENDJ,{}},
         };
