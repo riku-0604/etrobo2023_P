@@ -32,10 +32,15 @@ class DoubleLoop : public SectionManager {
             */
            
         SecParam spara [100] = {
-            {Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
+            {Section::TRACER,{20, -0.4,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{6},Section::NONE,{}},
+            {Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{20},Section::NONE,{}},
+            {Section::TRACER,{20, -0.4,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{6},Section::NONE,{}},
+            //{Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{5},Section::NONE,{}},
+            
+            /*{Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
             {Section::TURNWALKER,{25,40,5,3},Section::TURNANGLE,{-8},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{0,25,20,5,2},Section::LENGTH,{16},Section::NONE,{}},
-            {Section::TRACER,{30, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{90},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,25,20,5,2},Section::LENGTH,{16},Section::NONE,{}},*/
+            {Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{88},Section::NONE,{}},
             //{Section::TRACER,{40, 0,  30, 10, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{90},Section::NONE,{}},
             {Section::TRACER,{20, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},//青マーカー検知用
             //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
