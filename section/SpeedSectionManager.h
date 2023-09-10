@@ -47,7 +47,7 @@ class SpeedSectionManager : public SectionManager {
 
 
 
-
+            /*
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
             {Section::TRACER,{75, -0.25,  30, 10, 12,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{300},Section::NONE,{}},
 
@@ -63,7 +63,7 @@ class SpeedSectionManager : public SectionManager {
             
             //{Section::TRACER,{11.5, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},//Èùí„?û„?º„Ç´„ÉºÊ§úÁü•Áî®
             //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
-            
+            */
 
             {Section::END,{},Section::ENDJ,{}},
         };
