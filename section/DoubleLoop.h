@@ -33,47 +33,29 @@ class DoubleLoop : public SectionManager {
            
         SecParam spara [100] = {
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+
+            //{Section::TRACER,{30, 0,  33, 18, 4.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{100},Section::NONE,{}},//ì¸ÇÈÇ∆Ç±ÇÎ
+            //{Section::WALKER,{0, 0},Section::LENGTH,{150},Section::NONE,{}},
+
+            //{Section::TRACER,{30, 0,  33, 18, 4.8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{100},Section::NONE,{}},//ì¸ÇÈÇ∆Ç±ÇÎ
+            //{Section::TRACER,{30, 0,  33, 18, 4.8,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{100},Section::NONE,{}},//ì¸ÇÈÇ∆Ç±ÇÎ
+            //{Section::TRACER,{30, 0,  33, 23, 4.8,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{150},Section::NONE,{}},//ëÂâ~ÇÃì‡ë§
+            //{Section::TRACER,{30, 0,  34, 28, 5,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{200},Section::NONE,{}},//è¨â~ÇÃì‡ë§
+            //{Section::VIRTUALSTRAIGHT,{10,30,30,10,3.35},Section::LENGTH,{400},Section::NONE,{}},//íºê¸âºëz
+
             
 
-            /*
             {Section::TRACER,{20, -0.5,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{12},Section::NONE,{}},
             {Section::TRACER,{20, -0.5,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},//ê¬åüímÇµÇƒé~Ç‹ÇÈ
+            //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//ê¬åüímÇµÇƒé~Ç‹ÇÈ
 
-            //{Section::TRACER,{20, -0.4,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{6},Section::NONE,{}},
-            {Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{20},Section::NONE,{}},
-            {Section::TRACER,{20, -0.4,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{6},Section::NONE,{}},
-            //{Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{5},Section::NONE,{}},
-            
-            
-            {Section::TRACER,{20, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{88},Section::NONE,{}},
-            //{Section::TRACER,{40, 0,  30, 10, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{90},Section::NONE,{}},
-            {Section::TRACER,{20, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},//Èùí„?û„?º„Ç´„ÉºÊ§úÁü•Áî®
-            //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{160},Section::NONE,{}},
-            {Section::TRACER,{18, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},
-            //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{17},Section::NONE,{}},
-            {Section::TRACER,{23, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{7},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 8.5,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{230},Section::NONE,{}},
-            {Section::TRACER,{20, -0.3,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},
-            //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 7,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{40},Section::NONE,{}},
-            {Section::TRACER,{23, -0.4,  30, 10, 8,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{5},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 8.5,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{158},Section::NONE,{}},
-            //{Section::TRACER,{28, 0,  30, 10, 8,20,0,LineTracer::LEFTEDGE},Section::LENGTH,{35},Section::NONE,{}},
-            {Section::TRACER,{25, 0,  30, 10, 7,10,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{23},Section::NONE,{}},
-            {Section::TRACER,{20, -0.3,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},
-            {Section::TRACER,{23, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{145},Section::NONE,{}},
-            {Section::WALKER,{0, 0},Section::TIME,{200},Section::NONE,{}},
-            {Section::VIRTUALSTRAIGHT,{0,15,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},//Ëµ§
-            //{Section::TRACER,{25, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.1},Section::NONE,{}},
-            
-            //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{-10.5,30,30,10,3.35},Section::LENGTH,{20},Section::NONE,{}},//íºê¸âºëz
+            {Section::TRACER,{30, -0.25,  23, 18, 4.0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{100},Section::NONE,{}},//ì¸ÇÈÇ∆Ç±ÇÎ
 
+
+           
             {Section::WALKER,{0, 0},Section::LENGTH,{150},Section::NONE,{}},
-            */
+            
            
             {Section::TRACER,{12, -0.25,  30, 16, 3.45,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{18},Section::NONE,{}},//??øΩ?øΩ?
             {Section::VIRTUALSTRAIGHT,{0,15,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{15,0.5},Section::NONE,{}},
