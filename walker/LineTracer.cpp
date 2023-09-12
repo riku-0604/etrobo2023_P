@@ -50,6 +50,7 @@ void LineTracer::run()
 void LineTracer::init()
 {
     //printf("LineTracer  mForward%f\n",mForward);
+    mPid->resetParam();
 
 }
    
