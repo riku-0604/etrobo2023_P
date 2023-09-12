@@ -50,7 +50,11 @@ class DoubleLoop : public SectionManager {
             //{Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},//ê¬åüímÇµÇƒé~Ç‹ÇÈ
 
             {Section::VIRTUALSTRAIGHT,{-10.5,30,30,10,3.35},Section::LENGTH,{20},Section::NONE,{}},//íºê¸âºëz
-            {Section::TRACER,{30, -0.25,  23, 18, 4.0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{100},Section::NONE,{}},//ì¸ÇÈÇ∆Ç±ÇÎ
+            {Section::TRACER,{30, -0.25,  8, 18, 3.3,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{100},Section::NONE,{}},//ì¸ÇÈÇ∆Ç±ÇÎ
+            {Section::TRACER,{30, -0.5,  8, 20, 3.3,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},//ëÂâ~ÇÃì‡ë§
+            {Section::TRACER,{30, -0.5,  15, 23, 3.7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},//ëÂâ~ÇÃì‡ë§
+            {Section::TRACER,{30, -0.5,  15, 23, 3.7,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{25},Section::NONE,{}},//ëÂâ~ÇÃì‡ë§
+            {Section::TRACER,{30, -0.5,  15, 23, 3.7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.1},Section::NONE,{}},
 
 
            
