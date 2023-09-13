@@ -65,7 +65,7 @@ void Scene::execCalibration()
 {
     
     if(ev3_button_is_pressed(RIGHT_BUTTON)){
-        mColor->setRGB();
+        mColor->setRGB(1);
     }
 
     if(ev3_button_is_pressed(ENTER_BUTTON)){
@@ -107,6 +107,7 @@ void Scene::execDoubleLoop()
 
 void Scene::execBlockDeTreasure()
 {
+     mColor->setRGB(0);
     if(mBdt->run()){
         delete mBdt;
         mState = END;
