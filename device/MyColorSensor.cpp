@@ -95,6 +95,17 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
                
     float h=0, s=0, v=0;
     
+<<<<<<< Updated upstream
+=======
+    if(rgb_flag == 1)
+    {
+        r = r + 30;
+        g = g + 30;
+        b = b + 30;
+        printf("30 UP");
+    }
+
+>>>>>>> Stashed changes
     if (r >= g && g >= b) { 
         
         if(r!=0)
