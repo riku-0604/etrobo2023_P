@@ -10,16 +10,27 @@ class SpeedSectionManager : public SectionManager {
     protected:
 
     private:
-        /*??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ
-            LENGTH,{??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ}
-            TIME,{??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ}
-            COLOR,{??ｿｽ?ｿｽF,??ｿｽ?ｿｽﾊ度}
-            BLOCKCOLOR,{??ｿｽ?ｿｽﾔブ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽb??ｿｽ?ｿｽN,??ｿｽ?ｿｽﾂブ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽb??ｿｽ?ｿｽN,??ｿｽ?ｿｽﾊ度,??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ}
-            TURNANGLE,{??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽp??ｿｽ?ｿｽx}  //??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽs??ｿｽ?ｿｽﾌゑｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ?ｿｽ??ｿｽ?ｿｽl??ｿｽ?ｿｽﾍ右??ｿｽ?ｿｽ??ｿｽ?ｿｽ]??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ}??ｿｽ?ｿｽC??ｿｽ?ｿｽi??ｿｽ?ｿｽX??ｿｽ?ｿｽA??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ]??ｿｽ?ｿｽﾍプ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽX//
-            ARMANGLE,{??ｿｽ?ｿｽA??ｿｽ?ｿｽ[??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽp??ｿｽ?ｿｽx}
-            TEELANGLE,{??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽﾛの目標??ｿｽ?ｿｽp??ｿｽ?ｿｽx}
-            ENDJ,
-            NONE
+       
+           
+        SecParam spara [100] = {
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
+            {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
+            //{Section::TRACER,{50, 0,  48, 10, 13,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{13},Section::NONE,{}},
+            {Section::TRACER,{66, 0,  49, 10, 13,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{296},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
+            {Section::TRACER,{40, 0,  40, 12, 10,-20,0,LineTracer::RIGHTEDGE},Section::LENGTH,{36},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
+            {Section::TRACER,{66, 0,  49, 10, 13,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{175},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
+            {Section::TRACER,{40, 0,  40, 12, 10,-20,0,LineTracer::RIGHTEDGE},Section::LENGTH,{36},Section::NONE,{}},
+            //{Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
+            {Section::TRACER,{65, 0,  49, 10, 13,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{13},Section::NONE,{}},//LAP
+            
+            //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+        /*{
+            {LineTracer,},{},{},{},{}}
             */
 
            /*??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ??ｿｽ?ｿｽ

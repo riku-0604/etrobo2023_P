@@ -114,17 +114,20 @@ double MyColorSensor::normColor(double br,double min, double max)
 void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
 {
     
+
     double r = rgb.r;
     double g = rgb.g;
     double b = rgb.b;
                
     double h=0, s=0, v=0;
     /*
+
     if(rgb_flag == 1)
     {
         r = r + 30;
         g = g + 30;
         b = b + 30;
+
 
         //printf("RGB return1 OK");
     }
@@ -138,6 +141,11 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
         //printf("RGB return2 OK");
     }
     */
+
+
+        //printf("30 UP");
+    
+
 
     if (r >= g && g >= b) { 
         
