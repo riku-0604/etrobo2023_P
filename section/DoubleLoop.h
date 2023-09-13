@@ -32,6 +32,7 @@ class DoubleLoop : public SectionManager {
             */
            
         SecParam spara [100] = {
+            {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             
             
 
@@ -98,6 +99,7 @@ class DoubleLoop : public SectionManager {
             //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
             
             //{Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
+            
 
             {Section::END,{},Section::ENDJ,{}},
         };

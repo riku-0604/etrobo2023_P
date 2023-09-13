@@ -102,7 +102,7 @@ void Scene::execDoubleLoop()
     if(mDl->run()){
         delete mDl;
         mState = BLOCKDETREASURE;
-        mColor->setRGB(2);
+        //mColor->setRGB(2);
     }
 }
 
