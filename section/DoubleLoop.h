@@ -10,24 +10,24 @@ class DoubleLoop : public SectionManager {
     protected:
 
     private:
-        /*?¿½?¿½?¿½?¿½
-            LENGTH,{?¿½?¿½?¿½?¿½}
-            TIME,{?¿½?¿½?¿½?¿½}
-            COLOR,{?¿½F,?¿½Ê“x}
-            BLOCKCOLOR,{?¿½Ôƒu?¿½?¿½?¿½b?¿½N,?¿½Âƒu?¿½?¿½?¿½b?¿½N,?¿½Ê“x,?¿½?¿½?¿½?¿½}
-            TURNANGLE,{?¿½?¿½?¿½?¿½p?¿½x}  //?¿½?¿½?¿½s?¿½Ì‚ï¿½?¿½?¯Žï¿½?¿½l?¿½Í‰E?¿½?¿½]?¿½?¿½?¿½}?¿½C?¿½i?¿½X?¿½A?¿½?¿½?¿½?¿½]?¿½Íƒv?¿½?¿½?¿½X//
-            ARMANGLE,{?¿½A?¿½[?¿½?¿½?¿½p?¿½x}
-            TEELANGLE,{?¿½?¿½?¿½?¿½?¿½Û‚Ì–Ú•W?¿½p?¿½x}
-            BRIGHTNESS,{?¿½P?¿½x?¿½l,?¿½?¿½?¿½?¿½?¿½?¿½1?¿½?¿½?¿½?¿½?¿½?¿½0}
+        /*?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+            LENGTH,{?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½}
+            TIME,{?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½}
+            COLOR,{?ï¿½ï¿½F,?ï¿½ï¿½Ê“x}
+            BLOCKCOLOR,{?ï¿½ï¿½Ôƒu?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N,?ï¿½ï¿½Âƒu?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½N,?ï¿½ï¿½Ê“x,?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½}
+            TURNANGLE,{?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½p?ï¿½ï¿½x}  //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½s?ï¿½ï¿½Ì‚ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?ï¿½ï¿½l?ï¿½ï¿½Í‰E?ï¿½ï¿½?ï¿½ï¿½]?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½}?ï¿½ï¿½C?ï¿½ï¿½i?ï¿½ï¿½X?ï¿½ï¿½A?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½]?ï¿½ï¿½Íƒv?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½X//
+            ARMANGLE,{?ï¿½ï¿½A?ï¿½ï¿½[?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½p?ï¿½ï¿½x}
+            TEELANGLE,{?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Û‚Ì–Ú•W?ï¿½ï¿½p?ï¿½ï¿½x}
+            BRIGHTNESS,{?ï¿½ï¿½P?ï¿½ï¿½x?ï¿½ï¿½l,?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½1?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½0}
             ENDJ,
             NONE
             */
 
-           /*?¿½?¿½?¿½?¿½
-            WALKER,{?¿½O?¿½i?¿½Ìƒp?¿½?¿½?¿½[,?¿½?¿½?¿½?¿½Ìƒp?¿½?¿½?¿½[}  //?¿½?¿½?¿½?¿½Ìƒp?¿½?¿½?¿½[?¿½Í‰E?¿½?¿½]?¿½?¿½?¿½v?¿½?¿½?¿½X?¿½A?¿½?¿½?¿½?¿½]?¿½Íƒ}?¿½C?¿½i?¿½X//
-            TRACER,{?¿½?¿½?¿½x,?¿½?¿½?¿½?¿½,P,I,D,?¿½p?¿½x?¿½Ú•W?¿½l,?¿½?¿½?¿½?¿½?¿½P}
-            ARM,{?¿½Ú•W?¿½ÌƒA?¿½[?¿½?¿½?¿½ÌŠp?¿½x}
-            TEEL,{?¿½?¿½?¿½?¿½?¿½Û‚Ì??¿½?¿½[?¿½^?¿½[?¿½Ì‹ï¿½?¿½?¿½}
+           /*?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+            WALKER,{?ï¿½ï¿½O?ï¿½ï¿½i?ï¿½ï¿½Ìƒp?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½[,?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ìƒp?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½[}  //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ìƒp?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½[?ï¿½ï¿½Í‰E?ï¿½ï¿½?ï¿½ï¿½]?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½v?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½X?ï¿½ï¿½A?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½]?ï¿½ï¿½Íƒ}?ï¿½ï¿½C?ï¿½ï¿½i?ï¿½ï¿½X//
+            TRACER,{?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½x,?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½,P,I,D,?ï¿½ï¿½p?ï¿½ï¿½x?ï¿½ï¿½Ú•W?ï¿½ï¿½l,?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½P}
+            ARM,{?ï¿½ï¿½Ú•W?ï¿½ï¿½ÌƒA?ï¿½ï¿½[?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÌŠp?ï¿½ï¿½x}
+            TEEL,{?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Û‚ï¿½??ï¿½ï¿½?ï¿½ï¿½[?ï¿½ï¿½^?ï¿½ï¿½[?ï¿½ï¿½Ì‹ï¿½?ï¿½ï¿½?ï¿½ï¿½}
             END
             */
            
@@ -42,7 +42,7 @@ class DoubleLoop : public SectionManager {
             {Section::TRACER,{40, -0.2,  28, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{5},Section::NONE,{}},
             {Section::TRACER,{21, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{6},Section::NONE,{}},
 
-            {Section::TRACER,{21, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.16},Section::NONE,{}},//é’ã?žã?¼ã‚«ãƒ¼æ¤œçŸ¥ç”¨
+            {Section::TRACER,{21, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.16},Section::NONE,{}},//é’ï¿½?ï¿½ï¿½?ï¿½ã‚«ãƒ¼æ¤œçŸ¥ç”¨
             //{Section::TRACER,{22, 0,  30, 10, 5,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{10},Section::NONE,{}},
             //{Section::TRACER,{22, -0.5,  30, 10, 5,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{10},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
@@ -54,7 +54,7 @@ class DoubleLoop : public SectionManager {
             //{Section::TRACER,{22, -0.5,  30, 10, 5,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{10},Section::NONE,{}},
             {Section::TRACER,{33, 0,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{128},Section::NONE,{}},
             //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
-            {Section::TRACER,{21, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.16},Section::NONE,{}},//é’ã?žã?¼ã‚«ãƒ¼æ¤œçŸ¥ç”¨
+            {Section::TRACER,{21, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.16},Section::NONE,{}},//é’ï¿½?ï¿½ï¿½?ï¿½ã‚«ãƒ¼æ¤œçŸ¥ç”¨
             //{Section::WALKER,{0, 0},Section::TIME,{150},Section::NONE,{}},
             {Section::TRACER,{23, 0,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{14},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{-15,25,20,5,2,LineTracer::LEFTEDGE},Section::LENGTH,{13},Section::NONE,{}},
@@ -85,15 +85,15 @@ class DoubleLoop : public SectionManager {
             //{Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
             {Section::TRACER,{33, -0.1,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{20},Section::NONE,{}},
             {Section::TRACER,{23, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::COLOR,{228,0.16},Section::NONE,{}},
-            {Section::TRACER,{70, 0,  49, 10, 12,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{73},Section::NONE,{}},
+            {Section::TRACER,{70, 0,  49, 10, 12,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{63},Section::NONE,{}},
             {Section::TRACER,{32, 0,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{30},Section::NONE,{}},
             
             
             
-            {Section::TRACER,{23, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{25},Section::NONE,{}},
+            {Section::TRACER,{23, -0.2,  17, 12, 8,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{20},Section::NONE,{}},
             {Section::WALKER,{0, 0},Section::TIME,{80},Section::NONE,{}},
             
-            {Section::VIRTUALSTRAIGHT,{0,17,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{20,0.5},Section::NONE,{}},//èµ¤
+            {Section::VIRTUALSTRAIGHT,{0,16,20,5,2,LineTracer::LEFTEDGE},Section::COLOR,{20,0.5},Section::NONE,{}},//èµ¤
             //{Section::TRACER,{25, 0,  30, 10, 7,0,0,LineTracer::LEFTEDGE},Section::COLOR,{15,0.1},Section::NONE,{}},
             
             //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
