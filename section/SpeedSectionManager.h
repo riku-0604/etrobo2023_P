@@ -48,6 +48,7 @@ class SpeedSectionManager : public SectionManager {
             {Section::TRACER,{60, 0,  49, 10, 12,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{13},Section::NONE,{}},//LAP
             
             //{Section::TRACER,{0, 0, 0, 0, 0,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{500},Section::NONE,{}},
+            
             {Section::END,{},Section::ENDJ,{}},
         };
         /*{

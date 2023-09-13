@@ -37,10 +37,12 @@ MyColorSensor::MyColorSensor(ePortS port,
 #endif 
 }
 
-void MyColorSensor::setRGB(int rgb_flag)
+void MyColorSensor::setRGB(int rgb_f)
 {
     static char str[256];
     rgb_raw_t  raw;
+
+    rgb_flag = rgb_f;
 
     //printf("RGBsetOK");
 
@@ -117,13 +119,25 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
     double b = rgb.b;
                
     double h=0, s=0, v=0;
-    
+    /*
     if(rgb_flag == 1)
     {
         r = r + 30;
         g = g + 30;
         b = b + 30;
+
+        //printf("RGB return1 OK");
     }
+
+    if(rgb_flag == 2)
+    {
+        r = r - 30;
+        g = g - 30;
+        b = b - 30;
+
+        //printf("RGB return2 OK");
+    }
+    */
 
     if (r >= g && g >= b) { 
         

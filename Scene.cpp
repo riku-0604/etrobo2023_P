@@ -76,7 +76,7 @@ void Scene::execCalibration()
 void Scene::execStart()
 {
 
-    // とりあえず動かすだけなので、設計に基づ�?て書き直そう
+    // とりあえず動かすだけなので、設計に基づ?��?て書き直そう
     //printf("Press Touch Button to start!!\n");
     
     if (ev3_touch_sensor_is_pressed(EV3_PORT_1) == 1)
@@ -84,7 +84,7 @@ void Scene::execStart()
         mState=SPEED;
     }
 
-    //シュミレーターの時はこの下のコメントアウトを消す
+    //シュミレーターの時�?�こ�?�下�?�コメントアウトを消す
     if (ev3_button_is_pressed(LEFT_BUTTON) == 1)
     {
         mState=SPEED;
@@ -102,12 +102,13 @@ void Scene::execDoubleLoop()
     if(mDl->run()){
         delete mDl;
         mState = BLOCKDETREASURE;
+        mColor->setRGB(2);
     }
 }
 
 void Scene::execBlockDeTreasure()
 {
-     mColor->setRGB(0);
+    
     if(mBdt->run()){
         delete mBdt;
         mState = END;
