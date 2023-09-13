@@ -15,7 +15,7 @@ PID::PID(double delta) {
     firstCnt = 0;
     resetFlg=true;
 
-    sec = 50;
+    sec = 60;
     cnt=0;
 
     for(int i=0;i<sec;i++) 
