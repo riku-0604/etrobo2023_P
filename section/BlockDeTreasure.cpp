@@ -302,17 +302,17 @@ void BlockDeTreasure::SelectGetout()
 {
     if(BlockCount == 0)
     {
-        mState = INIT_GETOUT_BLOCK;
+        mState = INIT_GETOUT_BLOCK_LEFT;
     }
 
     if(BlockCount == 1)
     {
-        mState = INIT_GETOUT_BLOCK_LEFT;
+        mState = INIT_GETOUT_BLOCK;
     }
 
     if(BlockCount == 2)
     {
-        mState = INIT_GETOUT_BLOCK;
+        mState = INIT_GETOUT_BLOCK_LEFT;
     }
 
 }
@@ -321,17 +321,17 @@ void BlockDeTreasure::SelectGetting()
 {
     if(BlockCount == 0)
     {
-        mState = INIT_GETTING_BLOCK;
+        mState = INIT_GETTING_BLOCK_LEFT;
     }
 
     if(BlockCount == 1)
     {
-        mState = INIT_GETTING_BLOCK_LEFT;
+        mState = INIT_GETTING_BLOCK;
     }
 
     if(BlockCount == 2)
     {
-        mState = INIT_GETTING_BLOCK;
+        mState = INIT_GETTING_BLOCK_LEFT;
     }
 }
 
@@ -339,17 +339,17 @@ void BlockDeTreasure::SelectGetoutRed()
 {
     if(BlockCount == 0)
     {
-        mState = INIT_GETOUT_BLOCK_RED;
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
     }
 
     if(BlockCount == 1)
     {
-        mState = INIT_GETOUT_BLOCK_LEFT_RED;
+        mState = INIT_GETOUT_BLOCK_RED;
     }
 
     if(BlockCount == 2)
     {
-        mState = INIT_GETOUT_BLOCK_RED;
+        mState = INIT_GETOUT_BLOCK_LEFT_RED;
     }
 }
 #endif
