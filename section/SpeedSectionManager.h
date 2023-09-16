@@ -13,6 +13,11 @@ class SpeedSectionManager : public SectionManager {
        
            
         SecParam spara [100] = {
+
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{105,0.5},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::LENGTH,{100},Section::NONE,{}},
+
+
             {Section::WALKER,{0, 0},Section::TIME,{1},Section::NONE,{}},
             {Section::DEFOLTARMCHANGE,{-15},Section::TIME,{3},Section::NONE,{}},
             //{Section::TRACER,{50, 0,  48, 10, 13,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{13},Section::NONE,{}},
