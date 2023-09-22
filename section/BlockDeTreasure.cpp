@@ -147,6 +147,39 @@ bool BlockDeTreasure::run()
         case GETTING_BLOCK_LEFT:
             GettingBlockLeft();
             break;
+
+
+        case INIT_GETTING_BLOCK_1:
+            //reset();
+            init(GettingBlockpara1);
+            BlockCount++;
+            mState = GETTING_BLOCK_1;
+            break;
+        case GETTING_BLOCK_1:
+            GettingBlock();
+            break;
+
+        case INIT_GETTING_BLOCK_2:
+            //reset();
+            init(GettingBlockpara2);
+            BlockCount++;
+            mState = GETTING_BLOCK_2;
+            break;
+        case GETTING_BLOCK_2:
+            GettingBlock();
+            break;
+
+
+        case INIT_GETTING_BLOCK_3:
+            //reset();
+            init(GettingBlockpara3);
+            BlockCount++;
+            mState = GETTING_BLOCK_3;
+            break;
+        case GETTING_BLOCK_3:
+            GettingBlock();
+            break;
+
         case INIT_MOVE_TO_GOAL:
             //reset();
             init(MoveToGoalpara);
@@ -321,17 +354,17 @@ void BlockDeTreasure::SelectGetting()
 {
     if(BlockCount == 0)
     {
-        mState = INIT_GETTING_BLOCK_LEFT;
+        mState = INIT_GETTING_BLOCK_1;
     }
 
     if(BlockCount == 1)
     {
-        mState = INIT_GETTING_BLOCK;
+        mState = INIT_GETTING_BLOCK_2;
     }
 
     if(BlockCount == 2)
     {
-        mState = INIT_GETTING_BLOCK_LEFT;
+        mState = INIT_GETTING_BLOCK_3;
     }
 }
 
