@@ -98,6 +98,7 @@ bool BlockDeTreasure::run()
             //reset();
             init(GetoutBlockpara);
             BlockCount++;
+            BlueBlockCount++;
             mState = GETOUT_BLOCK;
             break;
         case GETOUT_BLOCK:
@@ -107,6 +108,7 @@ bool BlockDeTreasure::run()
             //reset();
             init(GetoutBlockRedpara);
             BlockCount++;
+            BlueBlockCount++;
             mState = GETOUT_BLOCK_RED;
             break;
         case GETOUT_BLOCK_RED:
@@ -116,6 +118,7 @@ bool BlockDeTreasure::run()
             //reset();
             init(GetoutBlockLeftpara);
             BlockCount++;
+            BlueBlockCount++;
             mState = GETOUT_BLOCK_LEFT;
             break;
         case GETOUT_BLOCK_LEFT:
@@ -125,6 +128,7 @@ bool BlockDeTreasure::run()
             //reset();
             init(GetoutBlockLeftRedpara);
             BlockCount++;
+            BlueBlockCount++;
             mState = GETOUT_BLOCK_LEFT_RED;
             break;
         case GETOUT_BLOCK_LEFT_RED:
@@ -245,7 +249,15 @@ bool BlockDeTreasure::MoveToBlock3()
    if(NotJudgeBlockFlag == 1)
     {
         if(SectionManager::run()){
-            SelectGetoutRed();
+
+            if(BlueBlockCount == 2)
+            {
+                SelectGetting();
+            }
+            else
+            {
+                SelectGetoutRed();
+            }
         }
     }
     else
@@ -270,6 +282,11 @@ bool BlockDeTreasure::JudgeingColor()
         }
         else
         {
+            if(BlueBlockCount == 1)
+            {
+                NotJudgeBlockFlag = 1;
+            }
+
            SelectGetout();
         }
 
