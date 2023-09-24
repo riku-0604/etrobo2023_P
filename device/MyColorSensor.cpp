@@ -120,27 +120,32 @@ void MyColorSensor::getHSV(rgb_f_t rgb, hsv_t& hsv)
     double b = rgb.b;
                
     double h=0, s=0, v=0;
-    /*
 
-    if(rgb_flag == 1)
+    
+    
+
+    if(d_color_flag == 0 && rgb_flag == 1)
     {
         r = r + 30;
         g = g + 30;
         b = b + 30;
 
+        d_color_flag = 1;
 
-        //printf("RGB return1 OK");
+        printf("RGB return1 OK");
     }
 
-    if(rgb_flag == 2)
+    if(block_color_flag == 0 && rgb_flag == 2)
     {
         r = r - 30;
         g = g - 30;
         b = b - 30;
 
-        //printf("RGB return2 OK");
+        block_color_flag = 1;
+
+        printf("RGB return2 OK");
     }
-    */
+    
 
 
         //printf("30 UP");

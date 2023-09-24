@@ -102,17 +102,15 @@ void Scene::execDoubleLoop()
     if(mDl->run()){
         delete mDl;
         mState = BLOCKDETREASURE;
-        //mColor->setRGB(2);
+        mColor->setRGB(2);
     }
 }
 
 void Scene::execBlockDeTreasure()
 {
-    
     if(mBdt->run()){
         delete mBdt;
         mState = END;
-    
     }
 }
 void Scene::execBingo()

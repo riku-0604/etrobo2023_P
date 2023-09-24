@@ -74,6 +74,8 @@ class MyColorSensor
 
         rgb_raw_t  raw;
 
+        int d_color_flag = 0;
+        int block_color_flag = 0;
 
 };
 
