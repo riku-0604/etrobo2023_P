@@ -542,6 +542,53 @@ class BlockDeTreasure : public SectionManager {
             {Section::END,{},Section::ENDJ,{}},
         };
 
+        SecParam GettingBlockpara1[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{15,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+
+        SecParam GettingBlockpara2[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{200,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+        SecParam GettingBlockpara3[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{40,0.5},Section::NONE,{}},//??申?申?
+
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
         SecParam GetoutBlockRedpara[100] = {
             {Section::TURNWALKER,{10,10,1.5,0.7},Section::TURNANGLE,{-43},Section::NONE,{}},
             {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::LENGTH,{9},Section::NONE,{}},
@@ -807,6 +854,53 @@ class BlockDeTreasure : public SectionManager {
             {Section::END,{},Section::ENDJ,{}},
         };
 
+        SecParam GettingBlockpara1[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{15,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+
+        SecParam GettingBlockpara2[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{200,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+        SecParam GettingBlockpara3[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{40,0.5},Section::NONE,{}},//??申?申?
+
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
         SecParam MoveToGoalpara[100] = {
            
             {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{40,0.8},Section::NONE,{}},//40,0.7
@@ -1016,6 +1110,53 @@ class BlockDeTreasure : public SectionManager {
             {Section::END,{},Section::ENDJ,{}},
         };
 
+        SecParam GettingBlockpara1[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{15,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+
+        SecParam GettingBlockpara2[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{200,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+        SecParam GettingBlockpara3[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{40,0.5},Section::NONE,{}},//??申?申?
+
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
         SecParam MoveToGoalpara[100] = {
            
             {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{120,0.6},Section::NONE,{}},
@@ -1214,6 +1355,53 @@ class BlockDeTreasure : public SectionManager {
             
             
             {Section::TRACER,{12, -0.4,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{13},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+        SecParam GettingBlockpara1[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{15,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+
+        SecParam GettingBlockpara2[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{200,0.5},Section::NONE,{}},//??申?申?
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{-8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::LEFTEDGE},Section::LENGTH,{8},Section::NONE,{}},
+
+            {Section::END,{},Section::ENDJ,{}},
+        };
+
+        SecParam GettingBlockpara3[100] = {
+            {Section::DEFOLTARMCHANGE,{5},Section::TIME,{20},Section::NONE,{}},
+            {Section::VIRTUALSTRAIGHT,{0,12,15,3,0.7},Section::COLOR,{40,0.5},Section::NONE,{}},//??申?申?
+
+            {Section::WALKER,{15, 0},Section::LENGTH,{4},Section::NONE,{}},
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::LENGTH,{7},Section::NONE,{}},
+
+            {Section::VIRTUALCURVE,{8,12,13,1.5,0.7},Section::BRIGHTNESS,{-0.3,0},Section::NONE,{}},
+            {Section::WALKER,{0, 0},Section::TIME,{100},Section::NONE,{}},
+            
+
+            
+            {Section::TRACER,{12, -0.3,  30, 10, 3.45,0,0,LineTracer::RIGHTEDGE},Section::LENGTH,{8},Section::NONE,{}},
             {Section::END,{},Section::ENDJ,{}},
         };
 
